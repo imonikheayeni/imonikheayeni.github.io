@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imonikhe Ayeni - Professional Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.05) 2px,
+                rgba(255, 255, 255, 0.05) 4px
+            );
+            animation: shimmer 20s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: slideIn 0.6s ease-out forwards;
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+            transition: width 0.3s ease;
+        }
+        
+        .section:hover h2::after {
+            width: 100px;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-category h4 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .projects-list {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .project-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-item:hover {
+            background: #fff;
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-item h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .strengths-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .strength-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+        
+        .strength-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-links {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            margin-top: 40px;
+        }
+        
+        .contact-links h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .links a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.5em;
+            }
+            
+            .links {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Imonikhe Ayeni</h1>
+            <div class="subtitle">Senior Data Scientist & Analytics Professional</div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <p><strong>Imonikhe Ayeni</strong> is a highly accomplished data scientist with an impressive blend of academic excellence and industry expertise spanning over 7 years in financial services and advanced analytics. Currently based in the United Kingdom, Imonikhe has established himself as a versatile professional capable of bridging the gap between complex technical analysis and strategic business decision-making.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Academic Excellence & Continuous Learning</h2>
+                <p>Imonikhe holds a <span class="highlight">Master of Science in Data Science with Distinction</span> from Cardiff Metropolitan University (2024), demonstrating exceptional academic performance in advanced data science methodologies. His educational foundation is further strengthened by a Master's in Geography and Planning from the University of Lagos and a Bachelor's degree with Second Class Upper honors from the University of Benin. This diverse educational background provides him with unique spatial analysis capabilities that complement his data science expertise.</p>
+                
+                <p>His commitment to professional development is evident through his recent certification achievements, including <span class="highlight">Microsoft Certified Power BI Data Analyst Associate</span>, <span class="highlight">Azure AI Fundamentals</span>, and <span class="highlight">Certiport IT Specialist</span> certifications in both Data Analytics and Databases. Currently preparing for AWS Certified Solutions Architect Associate certification, Imonikhe continues to expand his cloud computing expertise.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Professional Experience & Impact</h2>
+                
+                <h3>Current Role: Research Assistant at Cardiff Metropolitan University</h3>
+                <p>In his current position, Imonikhe orchestrates comprehensive data analysis for the Digital Technology Learning Support Network (DTLSN) Project in Wales. He has streamlined data ETL processes, developed sophisticated data models, and created compelling visualizations using cutting-edge tools including Python libraries (NumPy, Pandas, Matplotlib, Seaborn, Scikit-Learn), Power BI, and Tableau. His work focuses on implementing machine learning models for predictive analytics across various research initiatives.</p>
+                
+                <h3>Financial Services Expertise: Access Bank & Diamond Bank</h3>
+                <p>During his tenure in Nigeria's banking sector, Imonikhe demonstrated exceptional ability to translate complex data into actionable business insights:</p>
+                
+                <p><strong>At Access Bank (2019-2023):</strong> As a Business Intelligence Analyst, he developed predictive models for risk asset performance optimization, implemented data-driven solutions to reduce loan delinquency, and conducted sophisticated A/B testing for marketing campaigns. His work directly contributed to profit maximization through strategic pricing optimization.</p>
+                
+                <p><strong>At Diamond Bank (2014-2019):</strong> As a Data Analyst and Customer Experience Analyst, he transformed raw transaction data into meaningful insights, developed micro-segmented marketing campaigns for dormant customers, and achieved over 90% productivity increase through effective data mining and modeling techniques.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Technical Expertise & Innovation</h2>
+                <p>Imonikhe possesses comprehensive technical skills across the data science ecosystem:</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming & Analytics</h4>
+                        <p>Advanced SQL, Python (Pandas, NumPy, Matplotlib, Scikit-learn)</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Visualization & BI</h4>
+                        <p>Power BI (Certified), Tableau, Looker, advanced dashboard creation</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & Infrastructure</h4>
+                        <p>Azure (Certified), AWS, database management systems</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Advanced Analytics</h4>
+                        <p>Machine learning, statistical modeling, natural language processing, geospatial analysis</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Notable Project Portfolio</h2>
+                <p>His project portfolio showcases practical application of advanced data science techniques:</p>
+                
+                <div class="projects-list">
+                    <div class="project-item">
+                        <h4>Predictive Pricing Model</h4>
+                        <p>Developed machine learning models achieving 58.6% R² accuracy for Airbnb price prediction using Random Forest and Ridge Regression</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Healthcare ML Application</h4>
+                        <p>Built and deployed a stroke risk prediction model with automated retraining pipeline</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>Geospatial Machine Learning</h4>
+                        <p>Implemented spatial clustering algorithms for geographic pattern analysis</p>
+                    </div>
+                    <div class="project-item">
+                        <h4>NLP & Sentiment Analysis</h4>
+                        <p>Created sentiment analysis pipeline achieving 87% accuracy in classification</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Professional Strengths</h2>
+                <div class="strengths-list">
+                    <div class="strength-item">Strategic Vision</div>
+                    <div class="strength-item">Technical Leadership</div>
+                    <div class="strength-item">Cross-functional Collaboration</div>
+                    <div class="strength-item">Communication</div>
+                    <div class="strength-item">Continuous Innovation</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Looking Forward</h2>
+                <p>With his combination of advanced academic credentials, extensive industry experience, and cutting-edge technical certifications, Imonikhe Ayeni represents the next generation of data science professionals. His unique background spanning financial services, research, and advanced analytics positions him perfectly for senior data science roles where strategic thinking, technical excellence, and business acumen are equally valued.</p>
+                
+                <p>Currently seeking new opportunities to leverage his comprehensive skill set in challenging data science and analytics leadership roles, Imonikhe is well-positioned to drive data-driven transformation initiatives in forward-thinking organizations.</p>
+            </div>
+        </div>
+        
+        <div class="contact-links">
+            <h3>Connect with Imonikhe</h3>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/imonikhe-ayeni/" target="_blank">LinkedIn</a>
+                <a href="https://imonikheayeni.github.io/" target="_blank">Portfolio</a>
+                <a href="https://github.com/imonikheayeni" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
