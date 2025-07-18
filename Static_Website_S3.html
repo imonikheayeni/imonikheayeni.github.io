@@ -1,0 +1,233 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building and Deploying a Static Website on Amazon S3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+        }
+        h3 {
+            font-size: 1.4em;
+            margin-top: 20px;
+        }
+        p, li {
+            font-size: 1.1em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        .author {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Building and Deploying a Static Website on Amazon S3: A Step-by-Step Guide</h1>
+    <p class="author">By Imonikhe Ayeni</p>
+    
+    <p>In today's digital era, establishing an online presence is essential for personal portfolios, small businesses, or informational websites. Traditional web hosting can be complex and expensive, but cloud-based solutions like Amazon Simple Storage Service (S3) offer a cost-effective, scalable, and reliable alternative. This guide provides a step-by-step approach to building and deploying a static website on Amazon S3, leveraging its robust cloud storage capabilities.</p>
+    
+    <p>Designed for beginners with basic knowledge of HTML, CSS, and JavaScript, this tutorial will walk you through creating an S3 bucket, uploading website files, configuring static website hosting, and making your site publicly accessible. By the end, you'll have a live website and a foundational understanding of cloud storage and AWS console navigation.</p>
+
+    <h2>Project Architecture</h2>
+    <p>This project demonstrates how to host a static website using Amazon S3 for storage and hosting. The architecture is simple yet powerful, utilizing S3's static website hosting feature to serve HTML, CSS, and JavaScript files to users worldwide.</p>
+    
+    <img src="https://i.imgur.com/PWwfslE.png" alt="Project Diagram">
+
+    <h2>Step 1: Create an Amazon S3 Bucket</h2>
+    
+    <h3>1. Sign in to the AWS Management Console</h3>
+    <ul>
+        <li>Log in or register for an AWS account at <a href="https://eu-north-1.console.aws.amazon.com/console/home?nc2=h_ct&region=eu-north-1&src=header-signin#">AWS Console</a>.</li>
+        <li>Search for "S3" in the AWS Management Console search bar.</li>
+    </ul>
+    <img src="https://i.imgur.com/9iKY8js.png" alt="Search for S3">
+
+    <h3>2. Select an AWS Region</h3>
+    <p>Choose the AWS Region closest to your target audience to minimize latency and costs. The region selector is located in the top-right corner of the AWS Management Console, next to your account name.</p>
+    <img src="https://i.imgur.com/LE4SaCo.png" alt="AWS Region Selector">
+
+    <h3>3. Create a Bucket</h3>
+    <ul>
+        <li>From the S3 homepage, click <strong>Create bucket</strong>.</li>
+        <li>Enter a globally unique bucket name (e.g., <code>staticwebsite-imonikhe</code>). AWS S3 bucket names must be unique across all AWS accounts worldwide.</li>
+    </ul>
+    <img src="https://i.imgur.com/DV8bqE1.png" alt="Create Bucket">
+
+    <h3>4. Configure Bucket Settings</h3>
+    <ul>
+        <li><strong>Object Ownership</strong>: Select <strong>ACLs enabled</strong> to allow objects in this bucket to be owned by other AWS accounts. Access to this bucket and its objects can be specified using ACLs, providing granular control over permissions (note enabling ACL is a personal preference for this project).</li>
+        <li><strong>Public Access</strong>: Uncheck <strong>Block all public access</strong> to allow public access to your website files. Acknowledge the warning that appears.</li>
+    </ul>
+    <img src="https://i.imgur.com/I0SQh30.png" alt="Public Access Settings">
+
+    <h3>5. Enable Bucket Versioning</h3>
+    <p>Enable versioning to keep track of different versions of your objects, which is useful for recovery and debugging.</p>
+
+    <h3>6. Finalize Bucket Creation</h3>
+    <p>Leave other settings at their defaults and click <strong>Create bucket</strong>.</p>
+    <img src="https://i.imgur.com/P1EdU3x.png" alt="Bucket Created">
+
+    <h2>Step 2: Upload Website Content to Your Bucket</h2>
+    
+    <h3>1. Prepare Website Files</h3>
+    <p>Create or download a static website template containing HTML, CSS, and JavaScript files. Free templates are available at <a href="https://html5up.net/">HTML5 UP</a>.</p>
+
+    <h3>2. Upload Files to S3</h3>
+    <ul>
+        <li>Navigate to your bucket (e.g., <code>staticwebsite-imonikhe</code>) in the S3 console.</li>
+        <li>Click <strong>Upload</strong>, then select <strong>Add files</strong> or <strong>Add folder</strong> to upload your website files.</li>
+    </ul>
+    <img src="https://i.imgur.com/QKc5rUm.png" alt="Upload Files">
+    <img src="https://i.imgur.com/u2SGzrj.png" alt="Add Files">
+
+    <h3>3. Complete the Upload</h3>
+    <p>Click <strong>Upload</strong> at the bottom-right to transfer your files to the S3 bucket.</p>
+    <img src="https://i.imgur.com/YhyLtwu.png" alt="Upload Button">
+
+    <h3>4. Make Files Public</h3>
+    <ul>
+        <li>Select all uploaded files and folders in your bucket.</li>
+        <li>Click <strong>Actions</strong>, then choose <strong>Make public using ACL</strong>.</li>
+        <li>Scroll down and click <strong>Make public</strong>.</li>
+    </ul>
+    <img src="https://i.imgur.com/plMHd1i.png" alt="Make Public">
+    <img src="https://i.imgur.com/YENPPln.png" alt="Success Page">
+
+    <h2>Step 3: Configure Static Website Hosting</h2>
+    
+    <h3>1. Access Properties Tab</h3>
+    <p>In your S3 bucket, navigate to the <strong>Properties</strong> tab.</p>
+    <img src="https://i.imgur.com/jblPslE.png" alt="Properties Tab">
+
+    <h3>2. Enable Static Website Hosting</h3>
+    <ul>
+        <li>Scroll to the <strong>Static website hosting</strong> section and click <strong>Edit</strong>.</li>
+        <li>Select <strong>Enable</strong> for static website hosting.</li>
+        <li>Enter <code>index.html</code> as the <strong>Index document</strong> (this is the default page for your website).</li>
+        <li>Click <strong>Save changes</strong>.</li>
+    </ul>
+    <img src="https://i.imgur.com/d2G8UhF.png" alt="Edit Static Hosting">
+
+    <h3>3. Retrieve Bucket Website Endpoint</h3>
+    <p>After saving, scroll to the <strong>Static website hosting</strong> section to find your bucket's website endpoint (e.g., <code>http://staticwebsite-imonikhe.s3-website.eu-north-1.amazonaws.com/</code>).</p>
+    <img src="https://i.imgur.com/uoW3kfd.png" alt="Website Endpoint">
+
+    <h3>4. View Your Website</h3>
+    <p>Copy the website endpoint and paste it into a browser to view your live website.</p>
+    <img src="https://i.imgur.com/AQvDcKC.png" alt="Website Preview">
+    <img src="https://i.imgur.com/s8yQGt0.png" alt="Website Preview">
+
+    <h2>Step 4: Customize Your Website Endpoint (Optional)</h2>
+    
+    <p>The default S3 website endpoint (e.g., <code>http://staticwebsite-imonikhe.s3-website.eu-north-1.amazonaws.com/</code>) is functional but lengthy. To create a more professional URL, you can:</p>
+    <ul>
+        <li>Purchase a domain name through AWS Route 53 or third-party providers like Namecheap.</li>
+        <li>Configure Route 53 to route traffic to your S3 bucket, resulting in a custom domain like <code>http://imonikheayeni.com </code>. </li>
+        <li>For HTTPS support, you'll need to add CloudFront as a CDN in front of your S3 bucket like <code> <a href="https://imonikheayeni.com"> https://imonikheayeni.com </a> </code> </li>
+    </ul>
+    <img src="https://i.imgur.com/R1PEXBo.png" alt="Custom Domain">
+
+    <h2>Step 5: Delete Your Bucket (Optional)</h2>
+    
+    <p>AWS S3 hosting incurs a small monthly fee. If you’re not ready to maintain a live website, you can delete your bucket to avoid charges.</p>
+    
+    <h3>1. Empty the Bucket</h3>
+    <ul>
+        <li>Navigate to your bucket in the S3 console.</li>
+        <li>Select all files and folders, then click <strong>Actions</strong> > <strong>Delete</strong>.</li>
+        <li>Type <code>delete</code> to confirm and click <strong>Delete objects</strong>.</li>
+    </ul>
+    <img src="https://i.imgur.com/UY3mITx.png" alt="Delete Objects">
+
+    <h3>2. Delete the Bucket</h3>
+    <ul>
+        <li>Return to the S3 console, select your bucket, and click <strong>Empty</strong>.</li>
+        <li>Type <code>permanently delete</code> to confirm and click <strong>Empty</strong>.</li>
+        <li>Once the bucket is empty, select it again, click <strong>Delete</strong>, and confirm by typing the bucket name.</li>
+    </ul>
+    <img src="https://i.imgur.com/MQmfKTt.png" alt="Empty Bucket">
+    <img src="https://i.imgur.com/dYa9Njp.png" alt="Delete Bucket">
+
+    <h2>Conclusion</h2>
+    
+    <p>Congratulations! You’ve successfully built and deployed a static website on Amazon S3. This project demonstrates the power of cloud storage for hosting scalable, cost-effective websites. For free hosting alternatives, consider platforms like GitHub Pages, which also support custom domains.</p>
+    
+    <p>Feel free to experiment with additional AWS services like CloudFront for content delivery or Route 53 for custom domains to enhance your website further.</p>
+</body>
+</html>
