@@ -1,0 +1,169 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Start a Microsoft Fabric Free Trial with a Personal Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2, h3 {
+            color: #005A9E;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #0078D4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .author {
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to Start a Microsoft Fabric Free Trial with a Personal Email</h1>
+    <p class="author">By Imonikhe Ayeni, MBCS</p>
+    <p>As I prepared for the Microsoft Fabric Analytics Engineer (DP-600) and Microsoft Fabric Data Engineer (DP-700) certifications, I hit a roadblock: my work email couldn’t be used to access the Microsoft Fabric 60-day free trial. Not wanting to burden my admin team, I explored alternatives and discovered that a personal email could be used to activate the trial. Below, I share a step-by-step guide to help you set up a Microsoft Fabric free trial using your personal email, perfect for anyone looking to explore this powerful data platform without relying on a work account.</p>
+
+    <h2>Prerequisites</h2>
+    <ul>
+        <li>A personal email address (e.g., Gmail, Outlook, or Yahoo).</li>
+        <li>A web browser (e.g., Chrome, Edge, or Firefox).</li>
+        <li>The Microsoft Authenticator app for two-factor authentication (optional but recommended).</li>
+    </ul>
+
+    <h2>Step-by-Step Guide</h2>
+
+    <h3>1. Visit the Microsoft Azure Portal</h3>
+    <p>Open your browser and navigate to the <a href="https://azure.microsoft.com/free">Microsoft Azure Free Account page</a>. This is your entry point to creating an Azure account, which is required to access Microsoft Fabric.</p>
+    <img src="https://i.imgur.com/pAhFnOR.png" alt="Azure Free Account Page">
+
+    <h3>2. Sign Up or Sign In</h3>
+    <p>Click <strong>"Try Azure for free"</strong>. You’ll be prompted to either sign in with an existing Azure account or create a new one. If you don’t have an Azure account, select <strong>"Sign up"</strong> and use your personal email to register. Follow the prompts to set up your account, including verifying your email and providing payment details (required for identity verification, but no charges apply for the free trial).</p>
+    <p>If you already have an Azure account, sign in with your credentials. For example, I used an existing subscription, which led me to the Azure homepage.</p>
+    <img src="https://i.imgur.com/6rkynoc.png" alt="Azure Sign-In Page">
+
+    <h3>3. Access the Azure Homepage</h3>
+    <p>After signing in, you’ll land on the Azure portal’s homepage. This is where you’ll manage your account and set up access to Microsoft Fabric.</p>
+    <img src="https://i.imgur.com/IoJpAgJ.png" alt="Azure Homepage">
+
+    <h3>4. Navigate to Microsoft Entra ID</h3>
+    <p>In the Azure portal’s search bar, type <strong>"Entra ID"</strong> and select <strong>"Microsoft Entra ID"</strong> from the results. This service manages user identities and is crucial for creating a user account for Fabric.</p>
+    <img src="https://i.imgur.com/7oOOxQg.png" alt="Search for Entra ID">
+
+    <h3>5. Access the Users Section</h3>
+    <p>On the Entra ID page, expand the <strong>"Manage"</strong> tab on the left-hand side and click <strong>"Users"</strong>. This section lists all users associated with your Azure account.</p>
+    <img src="https://i.imgur.com/hvNuBew.png" alt="Users Section">
+
+    <h3>6. Create a New User</h3>
+    <p>Click <strong>"New user"</strong> at the top of the Users page. If the button is not clickable, try refreshing the page.</p>
+    <img src="https://i.imgur.com/Hfgi6Yu.png" alt="New User Button">
+    <p>Select <strong>"Create new user"</strong> (refresh the page if this option is unresponsive). Fill out the user creation form:</p>
+    <ul>
+        <li>Enter a <strong>User name</strong> (e.g., <code>user@yourdomain.onmicrosoft.com</code>).</li>
+        <li>Provide a <strong>Name</strong> for the user.</li>
+        <li>Uncheck <strong>"Auto-generate password"</strong> and set a memorable password.</li>
+        <li>Copy the <strong>User Principal Name</strong> (UPN) and password, as you’ll need them later to sign into Microsoft Fabric.</li>
+        <li>Click <strong>"Review + create"</strong>, then <strong>"Create"</strong> to finalize.</li>
+    </ul>
+    <img src="https://i.imgur.com/y67IJZ1.png" alt="Create New User Form">
+
+    <h3>7. Verify the New User</h3>
+    <p>Return to the Users page and refresh it to confirm the new user appears in the list. Click on the user to view details and verify the <strong>User Principal Name</strong>.</p>
+    <img src="https://i.imgur.com/1tKUVMG.png" alt="User List"> 
+    <img src="https://i.imgur.com/e68L4ko.png" alt="User Details">
+
+    <h3>8. Sign In to Microsoft Fabric</h3>
+    <p>Open the <a href="https://login.microsoftonline.com/">Microsoft Fabric login page</a> and sign in with the <strong>User Principal Name</strong> and password you created. For added security, enable two-factor authentication using the Microsoft Authenticator app when prompted.</p>
+    <img src="https://i.imgur.com/e3DfmR5.png" alt="Fabric Welcome Page">
+    <img src="https://i.imgur.com/3q0HbDx.png" alt="Fabric Sign-In">
+
+    <h3>9. Activate the Free Trial</h3>
+    <p>Once signed in, you’ll see the Microsoft Fabric welcome page. Click your profile icon in the top-right corner and select <strong>"Start free trial"</strong> to activate the 60-day trial.</p>
+    
+    <img src="https://i.imgur.com/RuEp4d5.png" alt="Activate Free Trial">
+
+    <h3>10. Success!</h3>
+    <p>Congratulations! You’ve successfully activated a Microsoft Fabric free trial using your personal email. You’re now ready to explore Fabric’s data analytics and engineering capabilities.</p>
+    <img src="https://i.imgur.com/eaRYkPt.png" alt="Trial Activated">
+
+    <h2>Tips for Success</h2>
+    <ul>
+        <li><strong>Keep credentials safe</strong>: Store your User Principal Name and password securely, as you’ll need them to access Fabric.</li>
+        <li><strong>Enable two-factor authentication</strong>: This adds an extra layer of security to your account.</li>
+        <li><strong>Explore Fabric</strong>: Use the trial to practice for certifications like DP-600 and DP-700, or experiment with Fabric’s data tools.</li>
+        <li><strong>Check trial status</strong>: Monitor your trial duration (60 days) to ensure you complete your learning or projects on time.</li>
+    </ul>
+
+    <h2>Why This Matters</h2>
+    <p>For professionals like me pursuing Microsoft Fabric certifications, accessing the platform with a personal email is a game-changer. It bypasses workplace restrictions and allows independent learning and experimentation. This approach empowered me to prepare for the DP-600 and DP-700 exams without relying on my organization’s IT team, and I hope it helps you achieve your goals too.</p>
+    <p>Feel free to share your experience or ask questions about Microsoft Fabric in the comments on my <a href="https://www.linkedin.com/in/imonikhe-ayeni-mbcs">LinkedIn post</a>! Happy learning!</p>
+</body>
+</html>
