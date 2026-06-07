@@ -1,0 +1,16 @@
+{
+  "name": "Imonikhe Ayeni Portfolio",
+  "short_name": "Imonikhe Ayeni",
+  "description": "Professional portfolio for Imonikhe Ayeni, Principal Insight Analyst and Data Scientist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7fafc",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "my%20passport.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
