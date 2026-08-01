@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SQL learning notes by Imonikhe Ayeni, covering database basics, querying, joins, reporting, data quality and analytics.">
+  <meta name="author" content="Imonikhe Ayeni">
+  <title>SQL for Data Analysis and Reporting | Imonikhe Ayeni</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+:root{--background:#fff;--surface:#fff;--surface-2:#f7f7f5;--text:#1f2328;--muted:#626870;--line:#dedede;--accent:#1f5d4f;--accent-soft:#edf4f1;--content-width:1220px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:#fff;color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72}a{color:inherit}.skip-link{position:fixed;top:-100px;left:1rem;z-index:1000;background:var(--text);color:#fff;padding:.7rem 1rem;border-radius:.4rem;font-weight:700}.skip-link:focus{top:1rem}.site-header{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(10px)}.header-inner{width:min(calc(100% - 2rem),var(--content-width));min-height:68px;margin:0 auto;display:flex;align-items:center;gap:1rem}.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:750;letter-spacing:-.02em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--text);border-radius:8px;background:#fff;color:var(--text);font-family:"JetBrains Mono",monospace;font-size:.84rem;font-weight:700}.search-wrap{margin-left:auto;width:min(420px,52vw);position:relative}.search-wrap input{width:100%;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);padding:.72rem 1rem .72rem 2.55rem;font:inherit;outline:none}.search-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}.search-icon{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--muted)}.hero{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto;padding:clamp(3.5rem,8vw,6rem) 0 3rem}.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:clamp(2rem,5vw,5rem);align-items:start}.eyebrow{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.eyebrow::before{display:none}h1{max-width:900px;margin:0;font-size:clamp(2.5rem,6vw,5.2rem);line-height:1.02;letter-spacing:-.05em}.gradient-text{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--text)}.hero-copy{max-width:760px;margin:1.5rem 0 0;color:var(--muted);font-size:clamp(1rem,1.7vw,1.14rem)}.hero-copy strong{color:var(--text);font-weight:700}.hero-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:1rem}.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.8rem}.metric{border:1px solid var(--line);border-radius:8px;padding:.7rem;background:var(--surface-2)}.metric strong{display:block;color:var(--text)}.metric span{color:var(--muted);font-size:.7rem}.author-note{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto 1.5rem;padding:1.25rem 1.4rem;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;background:var(--surface-2)}.author-note h2{margin:0 0 .45rem;font-size:1rem}.author-note p{margin:.25rem 0;color:var(--muted);font-size:.94rem}.library-nav{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto 2rem;display:flex;flex-wrap:wrap;gap:.65rem}.library-link{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--text);padding:.62rem .85rem;text-decoration:none;font-weight:650;font-size:.84rem}.library-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}.library-link.primary{color:#fff;border-color:var(--accent);background:var(--accent)}.layout{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto;display:grid;grid-template-columns:270px minmax(0,1fr);gap:2.5rem;align-items:start}.toc{position:sticky;top:90px;max-height:calc(100vh - 112px);overflow:auto;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#fff}.toc h2{margin:0 0 .75rem;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.toc nav{display:grid;gap:.1rem}.toc a{display:flex;gap:.6rem;align-items:flex-start;padding:.46rem .5rem;border-radius:5px;color:var(--muted);text-decoration:none;font-size:.81rem;line-height:1.35}.toc a span{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:.68rem;padding-top:.08rem}.toc a:hover,.toc a.active{color:var(--text);background:var(--surface-2)}.guide-section{display:grid;grid-template-columns:62px minmax(0,1fr);gap:1rem;padding:0 0 4rem}.section-number{position:sticky;top:94px;align-self:start;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:.78rem;font-weight:700}.section-content h2{margin:0;font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.18;letter-spacing:-.035em}.section-intro{max-width:820px;margin:.8rem 0 1.4rem;color:var(--muted)}.examples-grid{display:grid;gap:.9rem}.example-card{overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#fff}.example-heading{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:50px;padding:.68rem .8rem .68rem .9rem;border-bottom:1px solid var(--line);background:var(--surface-2)}.example-heading h3{margin:0;font-size:.9rem;font-weight:650}.copy-button{border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--muted);padding:.36rem .62rem;font:600 .72rem Inter,sans-serif;cursor:pointer}pre[class*="language-"],pre{margin:0!important;border-radius:0!important;background:#f6f8fa!important;color:#24292f!important;padding:1.15rem!important;overflow-x:auto;text-shadow:none!important}code[class*="language-"],pre code{color:#24292f!important;text-shadow:none!important;font-family:"JetBrains Mono",monospace!important;font-size:.82rem!important;line-height:1.62!important;white-space:pre}.no-results{display:none;margin:2rem 0 5rem;padding:1.5rem;border:1px dashed var(--line);border-radius:8px;color:var(--muted);text-align:center}.footer{margin-top:2rem;border-top:1px solid var(--line);background:var(--surface-2)}.footer-inner{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto;padding:1.7rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.84rem}.back-to-top{text-decoration:none;color:var(--text);font-weight:650;white-space:nowrap}@media(max-width:980px){.hero-grid,.layout{grid-template-columns:1fr}.toc{position:static;max-height:none}.toc nav{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:680px){.header-inner{flex-wrap:wrap;padding:.65rem 0}.search-wrap{order:2;width:100%}.hero{padding-top:3rem}.hero-meta{grid-template-columns:1fr}.toc nav{grid-template-columns:1fr}.guide-section{grid-template-columns:1fr;gap:.7rem}.section-number{position:static;width:42px;height:42px}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to the guide</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="SQL guide home">
+        <span class="brand-mark">SQL</span>
+        <span>SQL Guide</span>
+      </a>
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="guide-search" type="search" placeholder="Search queries, joins or concepts…" autocomplete="off" aria-label="Search the SQL guide">
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">SQL learning notes</div>
+          <h1>SQL for <span class="gradient-text">Data Analysis and Reporting</span></h1>
+          <p class="hero-copy">
+            <strong>By Imonikhe Ayeni</strong><br><br>
+            This guide starts with installing a database tool and writing simple queries, then moves
+            through filtering, summaries, joins, common table expressions, window functions, data-quality
+            checks and reporting. Work through the sections in order if you are new to SQL, or use the
+            contents panel to find a specific topic.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Example SQL query">
+          <pre><code class="language-sql">SELECT
+    hospital_id,
+    COUNT(*) AS patients,
+    AVG(age) AS mean_age
+FROM patients
+GROUP BY hospital_id
+ORDER BY patients DESC;</code></pre>
+
+          <div class="hero-meta">
+            <div class="metric"><strong>19</strong><span>sections</span></div>
+            <div class="metric"><strong>60+</strong><span>examples</span></div>
+            <div class="metric"><strong>Search</strong><span>built in</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="author-note">
+      <h2>A note from the author</h2>
+      <p>I’m Imonikhe Ayeni. I use SQL to extract, validate and summarise data for analysis and reporting.</p>
+      <p>I put this reference together to give beginners a clear route from their first SELECT statement to practical analytical queries.</p>
+    </section>
+
+    <nav class="library-nav" aria-label="Learning library navigation">
+      <a class="library-link" href="index.html">Python</a>
+      <a class="library-link" href="r-guide.html">R</a>
+      <a class="library-link primary" href="sql-guide.html">SQL</a>
+      <a class="library-link" href="../index.html#portfolio">Back to portfolio</a>
+    </nav>
+
+    <div class="layout">
+      <aside class="toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <nav><a href="#setup"><span>01</span>Installing SQL tools</a>
+<a href="#database-basics"><span>02</span>Database basics</a>
+<a href="#select"><span>03</span>Selecting data</a>
+<a href="#filtering"><span>04</span>Filtering rows</a>
+<a href="#sorting-limiting"><span>05</span>Sorting and limiting results</a>
+<a href="#calculated-columns"><span>06</span>Calculated columns and CASE</a>
+<a href="#aggregates"><span>07</span>Summary statistics</a>
+<a href="#joins"><span>08</span>Joining tables</a>
+<a href="#subqueries-ctes"><span>09</span>Subqueries and CTEs</a>
+<a href="#window-functions"><span>10</span>Window functions</a>
+<a href="#dates"><span>11</span>Working with dates</a>
+<a href="#text"><span>12</span>Working with text</a>
+<a href="#data-quality"><span>13</span>Data-quality checks</a>
+<a href="#modifying-data"><span>14</span>Updating and deleting data</a>
+<a href="#views-indexes"><span>15</span>Views and indexes</a>
+<a href="#analytics-project"><span>16</span>A complete analysis query</a>
+<a href="#python-r"><span>17</span>Using SQL with Python and R</a>
+<a href="#habits"><span>18</span>Good SQL habits</a>
+<a href="#learning-plan"><span>19</span>Four-week SQL learning plan</a></nav>
+      </aside>
+      <div>
+        <div id="no-results" class="no-results">No matching sections were found. Try a broader search term.</div>
+        
+    <section id="setup" class="guide-section searchable-section">
+      <div class="section-number">01</div>
+      <div class="section-content">
+        <h2>Installing SQL tools</h2>
+        <p class="section-intro">SQL is a language rather than a single application. To practise it, you need a database system and a tool for writing queries. SQLite is the simplest place to start, while PostgreSQL is a strong next step for real projects.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Beginner option: SQLite</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-none">1. Install DB Browser for SQLite, or use SQLite through Python.
+2. Create a new database file.
+3. Create a table or import a CSV file.
+4. Open the SQL editor.
+5. Run your first SELECT query.</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>PostgreSQL option</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-none">1. Download PostgreSQL from the official PostgreSQL website.
+2. Install PostgreSQL and pgAdmin.
+3. Set a password for the postgres administrator account.
+4. Open pgAdmin.
+5. Create a database named sql_learning.
+6. Open the Query Tool.</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Test the connection</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT version();</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="database-basics" class="guide-section searchable-section">
+      <div class="section-number">02</div>
+      <div class="section-content">
+        <h2>Database basics</h2>
+        <p class="section-intro">A relational database stores information in tables. Each table contains rows and columns, and related tables are connected through keys.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Create a table</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">CREATE TABLE patients (
+    patient_id INTEGER PRIMARY KEY,
+    patient_name VARCHAR(100) NOT NULL,
+    age INTEGER,
+    gender VARCHAR(30),
+    hospital_id INTEGER
+);</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Insert rows</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">INSERT INTO patients (
+    patient_id,
+    patient_name,
+    age,
+    gender,
+    hospital_id
+)
+VALUES
+    (1, &#x27;Alice Brown&#x27;, 45, &#x27;Female&#x27;, 101),
+    (2, &#x27;Ben Smith&#x27;, 62, &#x27;Male&#x27;, 102),
+    (3, &#x27;Chidi Okafor&#x27;, 38, &#x27;Male&#x27;, 101);</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>View the table</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="select" class="guide-section searchable-section">
+      <div class="section-number">03</div>
+      <div class="section-content">
+        <h2>Selecting data</h2>
+        <p class="section-intro">SELECT is the command you will use most often. It retrieves columns from one or more tables.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Select every column</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Select specific columns</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    age,
+    gender
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Rename output columns</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name AS name,
+    age AS patient_age
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Return unique values</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT DISTINCT gender
+FROM patients;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="filtering" class="guide-section searchable-section">
+      <div class="section-number">04</div>
+      <div class="section-content">
+        <h2>Filtering rows</h2>
+        <p class="section-intro">WHERE limits the rows returned by a query. Conditions can be combined with AND, OR and NOT.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Basic conditions</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+WHERE age &gt;= 50;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Multiple conditions</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+WHERE age &gt;= 40
+  AND gender = &#x27;Female&#x27;;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>IN, BETWEEN and LIKE</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+WHERE hospital_id IN (101, 102);
+
+SELECT *
+FROM patients
+WHERE age BETWEEN 40 AND 65;
+
+SELECT *
+FROM patients
+WHERE patient_name LIKE &#x27;A%&#x27;;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Missing values</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+WHERE age IS NULL;
+
+SELECT *
+FROM patients
+WHERE age IS NOT NULL;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="sorting-limiting" class="guide-section searchable-section">
+      <div class="section-number">05</div>
+      <div class="section-content">
+        <h2>Sorting and limiting results</h2>
+        <p class="section-intro">ORDER BY controls the order of results. LIMIT is useful while exploring large tables.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Sort ascending and descending</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    age
+FROM patients
+ORDER BY age DESC;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Sort by more than one column</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+ORDER BY hospital_id ASC, age DESC;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Limit the output</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+ORDER BY age DESC
+LIMIT 10;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="calculated-columns" class="guide-section searchable-section">
+      <div class="section-number">06</div>
+      <div class="section-content">
+        <h2>Calculated columns and CASE</h2>
+        <p class="section-intro">SQL can create new values while the query runs. CASE is used to apply conditional logic.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Arithmetic</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    age,
+    age + 5 AS age_in_five_years
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>CASE expression</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    age,
+    CASE
+        WHEN age &lt; 18 THEN &#x27;Child&#x27;
+        WHEN age &lt; 65 THEN &#x27;Adult&#x27;
+        ELSE &#x27;Older adult&#x27;
+    END AS age_group
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Handle nulls</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    COALESCE(gender, &#x27;Not recorded&#x27;) AS gender
+FROM patients;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="aggregates" class="guide-section searchable-section">
+      <div class="section-number">07</div>
+      <div class="section-content">
+        <h2>Summary statistics</h2>
+        <p class="section-intro">Aggregate functions reduce many rows to summary values such as counts, totals and averages.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Common aggregate functions</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    COUNT(*) AS patients,
+    AVG(age) AS mean_age,
+    MIN(age) AS youngest_age,
+    MAX(age) AS oldest_age
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Group summaries</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    gender,
+    COUNT(*) AS patients,
+    AVG(age) AS mean_age
+FROM patients
+GROUP BY gender;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Filter grouped results</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    hospital_id,
+    COUNT(*) AS patients
+FROM patients
+GROUP BY hospital_id
+HAVING COUNT(*) &gt;= 10;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="joins" class="guide-section searchable-section">
+      <div class="section-number">08</div>
+      <div class="section-content">
+        <h2>Joining tables</h2>
+        <p class="section-intro">Joins combine related tables. The join condition should identify how rows in one table correspond to rows in another.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Create a second table</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">CREATE TABLE hospitals (
+    hospital_id INTEGER PRIMARY KEY,
+    hospital_name VARCHAR(150),
+    region VARCHAR(100)
+);</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>INNER JOIN</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    p.patient_name,
+    p.age,
+    h.hospital_name
+FROM patients AS p
+INNER JOIN hospitals AS h
+    ON p.hospital_id = h.hospital_id;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>LEFT JOIN</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    p.patient_name,
+    h.hospital_name
+FROM patients AS p
+LEFT JOIN hospitals AS h
+    ON p.hospital_id = h.hospital_id;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Find unmatched rows</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT p.*
+FROM patients AS p
+LEFT JOIN hospitals AS h
+    ON p.hospital_id = h.hospital_id
+WHERE h.hospital_id IS NULL;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="subqueries-ctes" class="guide-section searchable-section">
+      <div class="section-number">09</div>
+      <div class="section-content">
+        <h2>Subqueries and CTEs</h2>
+        <p class="section-intro">Subqueries place one query inside another. Common table expressions, written with WITH, often make complex queries easier to read.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Subquery</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+WHERE age &gt; (
+    SELECT AVG(age)
+    FROM patients
+);</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Common table expression</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">WITH hospital_summary AS (
+    SELECT
+        hospital_id,
+        COUNT(*) AS patients,
+        AVG(age) AS mean_age
+    FROM patients
+    GROUP BY hospital_id
+)
+SELECT *
+FROM hospital_summary
+WHERE patients &gt;= 10;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="window-functions" class="guide-section searchable-section">
+      <div class="section-number">10</div>
+      <div class="section-content">
+        <h2>Window functions</h2>
+        <p class="section-intro">Window functions calculate values across related rows without collapsing the result into one row per group.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Row numbers</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    hospital_id,
+    age,
+    ROW_NUMBER() OVER (
+        PARTITION BY hospital_id
+        ORDER BY age DESC
+    ) AS age_rank
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Group average beside each row</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    hospital_id,
+    age,
+    AVG(age) OVER (
+        PARTITION BY hospital_id
+    ) AS hospital_mean_age
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Running total</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    activity_date,
+    daily_responses,
+    SUM(daily_responses) OVER (
+        ORDER BY activity_date
+    ) AS cumulative_responses
+FROM response_activity;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="dates" class="guide-section searchable-section">
+      <div class="section-number">11</div>
+      <div class="section-content">
+        <h2>Working with dates</h2>
+        <p class="section-intro">Date syntax differs slightly across database systems. These examples use PostgreSQL-style functions.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Extract parts of a date</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    appointment_date,
+    EXTRACT(YEAR FROM appointment_date) AS year,
+    EXTRACT(MONTH FROM appointment_date) AS month
+FROM appointments;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Calculate a duration</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_id,
+    appointment_date - referral_date AS waiting_days
+FROM appointments;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Group by month</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    DATE_TRUNC(&#x27;month&#x27;, appointment_date) AS month,
+    COUNT(*) AS appointments
+FROM appointments
+GROUP BY DATE_TRUNC(&#x27;month&#x27;, appointment_date)
+ORDER BY month;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="text" class="guide-section searchable-section">
+      <div class="section-number">12</div>
+      <div class="section-content">
+        <h2>Working with text</h2>
+        <p class="section-intro">Text functions help clean, combine and inspect character values.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Clean and combine text</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    TRIM(patient_name) AS clean_name,
+    UPPER(gender) AS gender_upper,
+    patient_name || &#x27; - &#x27; || gender AS patient_label
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Replace text</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    REPLACE(hospital_name, &#x27;NHS Foundation Trust&#x27;, &#x27;FT&#x27;) AS short_name
+FROM hospitals;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>String length</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_name,
+    LENGTH(patient_name) AS name_length
+FROM patients;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="data-quality" class="guide-section searchable-section">
+      <div class="section-number">13</div>
+      <div class="section-content">
+        <h2>Data-quality checks</h2>
+        <p class="section-intro">SQL is useful for checking completeness, duplicates, invalid values and broken relationships before analysis.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Count missing values</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    COUNT(*) AS total_rows,
+    COUNT(age) AS rows_with_age,
+    COUNT(*) - COUNT(age) AS missing_age
+FROM patients;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Find duplicate identifiers</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_id,
+    COUNT(*) AS occurrences
+FROM patients
+GROUP BY patient_id
+HAVING COUNT(*) &gt; 1;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Find invalid values</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patients
+WHERE age &lt; 0
+   OR age &gt; 120;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Check join coverage</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    COUNT(*) AS patient_rows,
+    COUNT(h.hospital_id) AS matched_hospital_rows
+FROM patients AS p
+LEFT JOIN hospitals AS h
+    ON p.hospital_id = h.hospital_id;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="modifying-data" class="guide-section searchable-section">
+      <div class="section-number">14</div>
+      <div class="section-content">
+        <h2>Updating and deleting data</h2>
+        <p class="section-intro">INSERT, UPDATE and DELETE change stored data. Always test the WHERE condition with SELECT before running an update or deletion.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Update rows</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">UPDATE patients
+SET gender = &#x27;Not recorded&#x27;
+WHERE gender IS NULL;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Delete rows carefully</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">-- Check first
+SELECT *
+FROM patients
+WHERE patient_id = 999;
+
+-- Delete only after checking
+DELETE FROM patients
+WHERE patient_id = 999;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Use a transaction</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">BEGIN;
+
+UPDATE patients
+SET hospital_id = 105
+WHERE hospital_id = 104;
+
+-- Review the result before saving
+SELECT *
+FROM patients
+WHERE hospital_id IN (104, 105);
+
+COMMIT;
+
+-- Use ROLLBACK instead of COMMIT to undo the transaction.</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="views-indexes" class="guide-section searchable-section">
+      <div class="section-number">15</div>
+      <div class="section-content">
+        <h2>Views and indexes</h2>
+        <p class="section-intro">Views save reusable queries. Indexes can speed up searches and joins, although they also add storage and maintenance costs.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Create a view</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">CREATE VIEW patient_hospital_view AS
+SELECT
+    p.patient_id,
+    p.patient_name,
+    p.age,
+    h.hospital_name,
+    h.region
+FROM patients AS p
+LEFT JOIN hospitals AS h
+    ON p.hospital_id = h.hospital_id;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Query the view</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT *
+FROM patient_hospital_view
+WHERE region = &#x27;Wales&#x27;;</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Create an index</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">CREATE INDEX idx_patients_hospital_id
+ON patients (hospital_id);</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="analytics-project" class="guide-section searchable-section">
+      <div class="section-number">16</div>
+      <div class="section-content">
+        <h2>A complete analysis query</h2>
+        <p class="section-intro">This example combines filtering, joining, grouping and calculated fields in one reporting query.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Hospital performance summary</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">WITH eligible_patients AS (
+    SELECT
+        patient_id,
+        hospital_id,
+        age,
+        satisfaction_score
+    FROM patient_experience
+    WHERE survey_year = 2026
+      AND satisfaction_score IS NOT NULL
+),
+hospital_results AS (
+    SELECT
+        hospital_id,
+        COUNT(*) AS responses,
+        AVG(satisfaction_score) AS mean_score,
+        AVG(age) AS mean_age
+    FROM eligible_patients
+    GROUP BY hospital_id
+)
+SELECT
+    h.hospital_name,
+    h.region,
+    r.responses,
+    ROUND(r.mean_score, 2) AS mean_score,
+    ROUND(r.mean_age, 1) AS mean_age,
+    CASE
+        WHEN r.mean_score &gt;= 90 THEN &#x27;High&#x27;
+        WHEN r.mean_score &gt;= 75 THEN &#x27;Moderate&#x27;
+        ELSE &#x27;Review&#x27;
+    END AS performance_band
+FROM hospital_results AS r
+INNER JOIN hospitals AS h
+    ON r.hospital_id = h.hospital_id
+ORDER BY r.mean_score DESC;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="python-r" class="guide-section searchable-section">
+      <div class="section-number">17</div>
+      <div class="section-content">
+        <h2>Using SQL with Python and R</h2>
+        <p class="section-intro">SQL often handles extraction and aggregation, while Python or R performs further analysis, visualisation or modelling.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Python with SQLite</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-python">import sqlite3
+import pandas as pd
+
+connection = sqlite3.connect(&quot;hospital.db&quot;)
+
+query = &#x27;&#x27;&#x27;
+SELECT
+    hospital_id,
+    COUNT(*) AS patients,
+    AVG(age) AS mean_age
+FROM patients
+GROUP BY hospital_id
+&#x27;&#x27;&#x27;
+
+summary = pd.read_sql_query(query, connection)
+connection.close()
+
+print(summary)</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>R with DBI</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-r">library(DBI)
+library(RSQLite)
+
+connection &lt;- dbConnect(
+  SQLite(),
+  &quot;hospital.db&quot;
+)
+
+summary &lt;- dbGetQuery(
+  connection,
+  &quot;
+  SELECT
+      hospital_id,
+      COUNT(*) AS patients,
+      AVG(age) AS mean_age
+  FROM patients
+  GROUP BY hospital_id
+  &quot;
+)
+
+dbDisconnect(connection)</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="habits" class="guide-section searchable-section">
+      <div class="section-number">18</div>
+      <div class="section-content">
+        <h2>Good SQL habits</h2>
+        <p class="section-intro">Readable SQL is easier to review, debug and maintain.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Formatting checklist</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-none">• Put major clauses such as SELECT, FROM and WHERE on separate lines.
+• Use clear aliases such as patients AS p and hospitals AS h.
+• Select only the columns you need.
+• Test complex work in small steps.
+• Check row counts before and after joins.
+• Avoid UPDATE or DELETE without a reviewed WHERE clause.
+• Comment unusual business rules.
+• Keep production credentials out of scripts.</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Avoid SELECT * in final reporting queries</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-sql">SELECT
+    patient_id,
+    age,
+    hospital_id
+FROM patients;</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+    <section id="learning-plan" class="guide-section searchable-section">
+      <div class="section-number">19</div>
+      <div class="section-content">
+        <h2>Four-week SQL learning plan</h2>
+        <p class="section-intro">Practise with a small database and write queries every day. SQL becomes familiar through repetition.</p>
+        <div class="examples-grid">
+          
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Week 1</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-none">Tables, rows, columns, SELECT, aliases, WHERE, DISTINCT, ORDER BY and LIMIT.
+
+Practice:
+• Create a small patient or sales database.
+• Write at least 20 filtering queries.</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Week 2</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-none">Aggregate functions, GROUP BY, HAVING, CASE, text functions and dates.
+
+Practice:
+• Produce a weekly or monthly summary report.</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Week 3</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-none">INNER JOIN, LEFT JOIN, subqueries, CTEs and data-quality checks.
+
+Practice:
+• Combine three related tables and validate the joins.</code></pre>
+        </article>
+        <article class="example-card">
+          <div class="example-heading">
+            <h3>Week 4</h3>
+            <button class="copy-button" type="button" aria-label="Copy code">Copy</button>
+          </div>
+          <pre><code class="language-none">Window functions, views, indexes, transactions and connecting SQL to Python or R.
+
+Practice:
+• Build one complete reporting project from raw tables to final output.</code></pre>
+        </article>
+        </div>
+      </div>
+    </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        Written and maintained by <strong>Imonikhe Ayeni</strong>.
+        <br>Last updated: August 2026.
+        <br>SQL syntax can vary between database systems, so check the documentation for the database you use.
+      </div>
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-r.min.js"></script>
+
+  <script>
+    const searchInput = document.getElementById("guide-search");
+    const sections = [...document.querySelectorAll(".searchable-section")];
+    const noResults = document.getElementById("no-results");
+    const tocLinks = [...document.querySelectorAll(".toc a")];
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+      sections.forEach((section) => {
+        const matches = section.textContent.toLowerCase().includes(query);
+        section.hidden = !matches;
+        if (matches) visibleCount += 1;
+      });
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    });
+
+    document.querySelectorAll(".copy-button").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const code = button.closest(".example-card").querySelector("code").innerText;
+        try {
+          await navigator.clipboard.writeText(code);
+          const originalText = button.textContent;
+          button.textContent = "Copied";
+          setTimeout(() => button.textContent = originalText, 1400);
+        } catch (error) {
+          button.textContent = "Select code";
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach((link) => link.classList.remove("active"));
+        const activeLink = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add("active");
+      });
+    }, {
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0
+    });
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</body>
+</html>
