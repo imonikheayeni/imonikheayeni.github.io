@@ -4,11 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
 <meta content="Imonikhe Ayeni" name="author"/>
-
-
-
 <title>Python for Data Science, Machine Learning and AI | Imonikhe Ayeni</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -44,8 +40,51 @@
     .related-card strong { display:block; margin-bottom:.25rem; }
     .related-card span { color:var(--muted); font-size:.85rem; }
     @media(max-width:680px){ .related-grid{grid-template-columns:1fr;} }
+
+.hero-learning-map{min-height:230px;padding:1.15rem;background:linear-gradient(180deg,#fbfcfb,#f6f8f7);border:1px solid #e8ebe9;border-radius:8px}
+.hero-learning-map .map-label{margin:0 0 .9rem;color:var(--accent);font-size:.72rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.learning-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;align-items:center;margin:1rem 0}
+.flow-step{min-height:76px;display:grid;place-items:center;text-align:center;border:1px solid var(--line);border-radius:8px;background:#fff;padding:.6rem;font-size:.8rem;font-weight:700;line-height:1.25}
+.flow-step::before{content:attr(data-step);display:block;color:var(--accent);font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:700;margin-bottom:.28rem}
+.hero-learning-map .map-note{margin:1rem 0 0;color:var(--muted);font-size:.82rem;line-height:1.55}
+.progress-line{height:5px;border-radius:999px;background:#e5e9e7;overflow:hidden;margin:.9rem 0 .2rem}
+.progress-line span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--accent),#8baea4)}
+@media(max-width:680px){.learning-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-learning-map{min-height:auto}}
+
+.interview-section{margin-top:1rem}
+.definition-box{border:1px solid var(--line);border-radius:8px;background:#fff;padding:1rem 1.05rem;margin:.75rem 0}
+.definition-box h3{margin:0 0 .35rem;font-size:.95rem}
+.definition-box p{margin:.25rem 0;color:var(--muted);font-size:.9rem}
+.definition-box strong{color:var(--text)}
+.compare-table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.86rem}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:.68rem .75rem;text-align:left;vertical-align:top}
+.compare-table th{background:var(--surface-2);font-weight:700}
+.interview-q{border:1px solid var(--line);border-radius:8px;padding:1rem;margin:.8rem 0;background:#fff}
+.interview-q h3{margin:0 0 .45rem;font-size:.95rem}
+.interview-q p{margin:.3rem 0;color:var(--muted);font-size:.9rem}
+.interview-q .answer{color:var(--text)}
+.quick-terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.quick-term{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:#fff}
+.quick-term strong{display:block;margin-bottom:.28rem;font-size:.9rem}
+.quick-term span{display:block;color:var(--muted);font-size:.84rem;line-height:1.5}
+@media(max-width:680px){.quick-terms{grid-template-columns:1fr}.compare-table{display:block;overflow-x:auto}}
+
+.practical-tests{margin-top:1.5rem}
+.practical-tests>h3{margin:1.4rem 0 .4rem;font-size:1.15rem}
+.practical-tests>.section-lead{margin:0 0 1rem;color:var(--muted);font-size:.92rem}
+.practice-card{border:1px solid var(--line);border-radius:8px;background:#fff;margin:.9rem 0;overflow:hidden}
+.practice-head{padding:.75rem .9rem;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.practice-head strong{display:block;font-size:.92rem}
+.practice-head span{display:block;color:var(--muted);font-size:.78rem;margin-top:.2rem}
+.practice-body{padding:.95rem}
+.practice-body p{margin:.35rem 0;color:var(--muted);font-size:.9rem}
+.practice-body p strong{color:var(--text)}
+.practice-body pre{margin:.75rem 0 0!important}
+.answer-structure{border-left:4px solid var(--accent);background:var(--surface-2);padding:.85rem 1rem;margin:.8rem 0}
+.answer-structure p{margin:.25rem 0;font-size:.88rem;color:var(--muted)}
+.answer-structure strong{color:var(--text)}
 </style>
-<meta content="Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni." name="description"/><link href="https://imonikheayeni.com/learning-library/python-guide.html" rel="canonical"/><meta content="article" property="og:type"/><meta content="Python for Data Science, Machine Learning and AI" property="og:title"/><meta content="Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni." property="og:description"/><meta content="https://imonikheayeni.com/learning-library/python-guide.html" property="og:url"/><meta content="Imonikhe Ayeni" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Python for Data Science, Machine Learning and AI" name="twitter:title"/><meta content="Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "@id": "https://imonikheayeni.com/learning-library/python-guide.html#article", "headline": "Python for Data Science, Machine Learning and AI", "description": "Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni.", "url": "https://imonikheayeni.com/learning-library/python-guide.html", "datePublished": "2026-08-01", "dateModified": "2026-08-01", "inLanguage": "en-GB", "proficiencyLevel": "Beginner to intermediate", "timeRequired": "PT18M", "keywords": "Python, Data Science, Machine Learning, Deep Learning, Artificial Intelligence", "author": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "publisher": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "isPartOf": {"@type": "CollectionPage", "name": "Learning Library", "url": "https://imonikheayeni.com/learning-library/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://imonikheayeni.com/"}, {"@type": "ListItem", "position": 2, "name": "Learning Library", "item": "https://imonikheayeni.com/learning-library/"}, {"@type": "ListItem", "position": 3, "name": "Python", "item": "https://imonikheayeni.com/learning-library/python-guide.html"}]}]}</script></head>
+<meta content="Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni." name="description"/><link href="https://imonikheayeni.com/learning-library/python-guide.html" rel="canonical"/><meta content="article" property="og:type"/><meta content="Python for Data Science, Machine Learning and AI" property="og:title"/><meta content="Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni." property="og:description"/><meta content="https://imonikheayeni.com/learning-library/python-guide.html" property="og:url"/><meta content="Imonikhe Ayeni" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="Python for Data Science, Machine Learning and AI" name="twitter:title"/><meta content="Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "@id": "https://imonikheayeni.com/learning-library/python-guide.html#article", "headline": "Python for Data Science, Machine Learning and AI", "description": "Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni.", "url": "https://imonikheayeni.com/learning-library/python-guide.html", "datePublished": "2026-08-01", "dateModified": "2026-09-12", "inLanguage": "en-GB", "proficiencyLevel": "Beginner to intermediate", "timeRequired": "PT18M", "keywords": "Python, Data Science, Machine Learning, Deep Learning, Artificial Intelligence", "author": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "publisher": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "isPartOf": {"@type": "CollectionPage", "name": "Learning Library", "url": "https://imonikheayeni.com/learning-library/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://imonikheayeni.com/"}, {"@type": "ListItem", "position": 2, "name": "Learning Library", "item": "https://imonikheayeni.com/learning-library/"}, {"@type": "ListItem", "position": 3, "name": "Python", "item": "https://imonikheayeni.com/learning-library/python-guide.html"}]}]}</script><meta content="index, follow, max-image-preview:large" name="robots"/></head>
 <body id="top">
 <a class="skip-link" href="#main-content">Skip to the guide</a>
 <header class="site-header">
@@ -69,42 +108,29 @@
 <h1>Python for <span class="gradient-text">Data Science, Machine Learning &amp; AI</span></h1>
 <p class="hero-copy"><strong>By Imonikhe Ayeni</strong><br/><br/>This is a practical Python reference for beginners. It starts with installation and moves through core syntax, data analysis, machine learning, deep learning and AI. Work through the sections in order, type the examples yourself and change the values so you can see how the code behaves.</p>
 </div>
-<aside aria-label="Example Python code" class="hero-card">
-<pre><code class="language-python">import pandas as pd
-
-df = pd.read_csv("data.csv")
-
-summary = (
-    df.groupby("category")
-      .agg(mean_score=("score", "mean"))
-      .reset_index()
-)
-
-print(summary)</code></pre>
+<aside aria-label="Python learning path preview" class="hero-card">
+<div class="hero-learning-map">
+<p class="map-label">A beginner-first route</p>
+<div class="learning-flow"><div class="flow-step" data-step="01">Basics</div><div class="flow-step" data-step="02">Data</div><div class="flow-step" data-step="03">Models</div><div class="flow-step" data-step="04">Projects</div></div>
+<div aria-hidden="true" class="progress-line"><span></span></div>
+<p class="map-note">Start with the fundamentals. The data science and AI topics are there when you are ready.</p>
+</div>
 <div class="hero-meta">
-<div class="metric">
-<strong>27</strong>
-<span>learning sections</span>
-</div>
-<div class="metric">
-<strong>100+</strong>
-<span>syntax examples</span>
-</div>
-<div class="metric">
-<strong>1 page</strong>
-<span>searchable guide</span>
-</div>
+<div class="metric"><strong>27</strong><span>learning sections</span></div>
+<div class="metric"><strong>100+</strong><span>syntax examples</span></div>
+<div class="metric"><strong>Part 1</strong><span>learning library</span></div>
 </div>
 </aside>
 </div>
-</section><div aria-label="Course information" class="course-details"><span>Beginner to intermediate</span><span>About 18 minutes</span><span>Last updated August 2026</span></div>
-<section class="author-note"><h2>A note from the author</h2><p>I’m Imonikhe Ayeni. I use Python in data analysis, research and reporting work.</p><p>I put this reference together so learners can find the main ideas and examples in one place.</p></section>
-<nav aria-label="Learning library navigation" class="library-nav">
-<a class="library-link primary" href="python-guide.html">Part 1: Python</a>
+</section><div aria-label="Course information" class="course-details"><span>Beginner to intermediate</span><span>About 18 minutes</span><span>Last updated September 2026</span><span>Includes interview refresher</span></div>
+<section class="author-note"><h2>A note from the author</h2><p>I’m Imonikhe Ayeni. I use Python for data analysis, research, automation and modelling.</p><p>If you are new to Python, start at section 01 and stay with the early sections until the syntax feels comfortable. The machine-learning and AI sections are later reference material, not a starting requirement.</p></section>
+<nav aria-label="Learning library navigation" class="library-nav"><a class="library-link primary" href="python-guide.html">Part 1: Python</a>
 <a class="library-link" href="r-guide.html">Part 2: R</a>
-<a class="library-link" href="sql-guide.html">SQL</a>
-<a class="library-link" href="../index.html#portfolio">Back to portfolio</a>
-</nav>
+<a class="library-link" href="sql-guide.html">Part 3: SQL</a>
+<a class="library-link" href="excel-guide.html">Part 4: Excel</a>
+<a class="library-link" href="power-bi-guide.html">Part 5: Power BI</a>
+<a class="library-link" href="dax-guide.html">Part 6: DAX</a>
+<a class="library-link" href="interview-preparation.html">Interview Guide</a><a class="library-link" href="interview-glossary.html">Interview Glossary</a><a class="library-link" href="../index.html#portfolio">Back to portfolio</a></nav>
 <div class="layout">
 <aside aria-label="Table of contents" class="toc">
 <h2>Contents</h2>
@@ -135,7 +161,7 @@ print(summary)</code></pre>
 <a href="#saving-models"><span>24</span>Saving and reusing models</a>
 <a href="#complete-project"><span>25</span>Complete machine-learning template</a>
 <a href="#habits"><span>26</span>Good coding habits and common mistakes</a>
-<a href="#learning-plan"><span>27</span>Four-week learning plan</a>
+<a href="#interview-refresher"><span>27</span>Python interview refresher</a><a href="#learning-plan"><span>28</span>Four-week learning plan</a>
 </nav>
 </aside>
 <div>
@@ -1815,8 +1841,37 @@ X_test_scaled = scaler.transform(X_test)</code></pre>
 </div>
 </div>
 </section>
-<section class="guide-section searchable-section" id="learning-plan">
-<div class="section-number">27</div>
+<section class="guide-section searchable-section interview-section" id="interview-refresher"><div class="section-number">27</div><div class="section-content"><h2>Python key terms and interview refresher</h2><p class="section-intro">Use this section as a quick revision page before an interview or when a term comes up at work. The aim is to understand the idea well enough to explain it in plain language before memorising syntax.</p><div class="quick-terms"><div class="quick-term"><strong>Mutable vs immutable</strong><span>Mutable objects can change after creation, such as lists and dictionaries. Immutable objects, such as strings, integers and tuples, cannot be changed in place.</span></div><div class="quick-term"><strong>List vs tuple</strong><span>A list is mutable and is used when values may change. A tuple is immutable and is useful for fixed collections or records.</span></div><div class="quick-term"><strong>== vs is</strong><span>== compares values. is compares object identity, meaning whether two names refer to the same object.</span></div><div class="quick-term"><strong>Iterable vs iterator</strong><span>An iterable can produce values one at a time. An iterator is the object that keeps track of the current position during iteration.</span></div><div class="quick-term"><strong>Generator</strong><span>A generator produces values lazily, usually with yield, so large sequences do not have to be stored fully in memory.</span></div><div class="quick-term"><strong>Shallow vs deep copy</strong><span>A shallow copy copies the outer container but shares nested objects. A deep copy recursively copies nested objects too.</span></div><div class="quick-term"><strong>loc vs iloc</strong><span>pandas loc selects by labels; iloc selects by integer positions.</span></div><div class="quick-term"><strong>Overfitting</strong><span>A model overfits when it learns training data too closely and performs poorly on new data.</span></div></div><h3 style="margin-top:1.6rem">Common interview questions</h3><div class="interview-q"><h3>What is the difference between a list and a tuple?</h3><p class="answer">Lists are mutable; tuples are immutable. Use a list when the collection may change, and a tuple when the values should remain fixed.</p></div><div class="interview-q"><h3>What is the difference between == and is?</h3><p class="answer">== checks whether values are equal. is checks whether two references point to the same object in memory.</p></div><div class="interview-q"><h3>What is a Python generator?</h3><p class="answer">A generator is an iterator that yields values one at a time instead of creating the entire result in memory.</p></div><div class="interview-q"><h3>What is the difference between loc and iloc in pandas?</h3><p class="answer">loc uses labels and can use Boolean conditions; iloc uses integer positions.</p></div><div class="interview-q"><h3>How do you reduce data leakage in machine learning?</h3><p class="answer">Split data before fitting preprocessing steps, fit transformations only on training data, and use pipelines so the same transformations are applied consistently.</p></div><div class="practical-tests"><h3>Practical interview tests</h3><p class="section-lead">These short tasks test whether you can apply the tool, explain your reasoning and validate the result. In a live exercise, say your assumptions aloud and check the output rather than rushing straight to syntax.</p><div class="practice-card"><div class="practice-head"><strong>Remove duplicates from a list while preserving the original order.</strong><span>What it tests: basic data structures and readable Python</span></div><div class="practice-body"><p><strong>Answer: </strong>Use a set to remember values already seen while building a new list in the original order.</p><p><strong>Why: </strong>Turning the list directly into a set removes duplicates, but this pattern makes the order-preservation requirement explicit.</p><pre><code class="language-python">values = [3, 1, 3, 2, 1, 4]
+
+seen = set()
+unique_values = []
+
+for value in values:
+    if value not in seen:
+        seen.add(value)
+        unique_values.append(value)
+
+print(unique_values)  # [3, 1, 2, 4]</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>Return the mean score and record count for each category in pandas.</strong><span>What it tests: grouping and aggregation</span></div><div class="practice-body"><p><strong>Answer: </strong>Group by category and use named aggregations.</p><p><strong>Why: </strong>This produces clear output names and avoids manual loops.</p><pre><code class="language-python">summary = (
+    df.groupby("category")
+      .agg(
+          mean_score=("score", "mean"),
+          records=("score", "size")
+      )
+      .reset_index()
+)</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>How would you identify rows that did not match another table after a join?</strong><span>What it tests: join validation and data quality</span></div><div class="practice-body"><p><strong>Answer: </strong>Use a left merge with indicator=True and inspect rows marked left_only.</p><p><strong>Why: </strong>Interviewers often care as much about how you validate a join as how you write it.</p><pre><code class="language-python">checked = df_left.merge(
+    df_right,
+    on="customer_id",
+    how="left",
+    indicator=True
+)
+
+unmatched = checked[checked["_merge"] == "left_only"]</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>A numeric column contains blanks and text such as 'unknown'. How would you prepare it?</strong><span>What it tests: defensive data cleaning</span></div><div class="practice-body"><p><strong>Answer: </strong>Convert with pandas.to_numeric(errors='coerce'), inspect the resulting missing values, then choose a treatment that matches the business meaning.</p><p><strong>Why: </strong>A strong answer does not automatically replace everything with zero because zero may be a genuine value.</p><pre><code class="language-python">df["age"] = pd.to_numeric(
+    df["age"],
+    errors="coerce"
+)
+
+print(df["age"].isna().sum())</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>A model performs very well on training data but poorly on test data. What is happening?</strong><span>What it tests: machine-learning judgement</span></div><div class="practice-body"><p><strong>Answer: </strong>The model is probably overfitting: it has learned training-specific patterns that do not generalise.</p><p><strong>Why: </strong>Useful follow-ups are cross-validation, simpler models, regularisation, leakage checks and more representative training data.</p></div></div></div></div></section><section class="guide-section searchable-section" id="learning-plan">
+<div class="section-number">28</div>
 <div class="section-content">
 <h2>Four-week learning plan</h2>
 <p class="section-intro">Progress comes from writing and debugging code, not only reading it. Re-type the examples, change the inputs, deliberately create errors and explain the output in your own words.</p>
@@ -1873,7 +1928,7 @@ Practice project:
 </main>
 <section class="related-guides"><h2>Continue learning</h2><div class="related-grid"><a class="related-card" href="r-guide.html"><strong>R for Data Science, Statistics and Reporting</strong><span>Learn R and RStudio for data cleaning, visualisation, statistics, modelling, Quarto and Shiny with practical examples by Imonikhe Ayeni.</span></a><a class="related-card" href="sql-guide.html"><strong>SQL for Data Analysis and Reporting</strong><span>Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples.</span></a></div></section><footer class="footer">
 <div class="footer-inner">
-<div>Written and maintained by <strong>Imonikhe Ayeni</strong>.<br/>Last updated: August 2026.<br/>Use the examples as a starting point and test them against your own data and requirements.</div>
+<div>Written and maintained by <strong>Imonikhe Ayeni</strong>.<br/>Last updated: September 2026.</div>
 <a class="back-to-top" href="#top">Back to top ↑</a>
 </div>
 </footer>

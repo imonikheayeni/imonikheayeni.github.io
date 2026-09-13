@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Imonikhe Ayeni" name="author"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<title>Data &amp; Analytics Interview Preparation | Imonikhe Ayeni</title>
+<meta content="Technical, practical and behavioural interview preparation for Python, R, SQL, Excel, Power BI and DAX roles, with answer frameworks and worked examples." name="description"/>
+<link href="https://imonikheayeni.com/learning-library/interview-preparation.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Data &amp; Analytics Interview Preparation" property="og:title"/>
+<meta content="Prepare for technical tests, practical data questions and behavioural interviews across Python, R, SQL, Excel, Power BI and DAX." property="og:description"/>
+<meta content="https://imonikheayeni.com/learning-library/interview-preparation.html" property="og:url"/>
+<meta content="Imonikhe Ayeni" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "@id": "https://imonikheayeni.com/learning-library/interview-preparation.html#article", "headline": "Data and Analytics Interview Preparation Guide", "description": "Technical, practical and behavioural interview preparation for Python, R, SQL, Excel, Power BI and DAX roles.", "url": "https://imonikheayeni.com/learning-library/interview-preparation.html", "datePublished": "2026-09-13", "dateModified": "2026-09-13", "inLanguage": "en-GB", "author": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "isPartOf": {"@type": "CollectionPage", "name": "Learning Library", "url": "https://imonikheayeni.com/learning-library/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://imonikheayeni.com/"}, {"@type": "ListItem", "position": 2, "name": "Learning Library", "item": "https://imonikheayeni.com/learning-library/"}, {"@type": "ListItem", "position": 3, "name": "Interview Preparation", "item": "https://imonikheayeni.com/learning-library/interview-preparation.html"}]}]}</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--background:#fff;--surface:#fff;--surface-2:#f7f7f5;--text:#1f2328;--muted:#626870;--line:#dedede;--accent:#1f5d4f;--accent-soft:#edf4f1;--content-width:1220px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:#fff;color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.72}a{color:inherit}.skip-link{position:fixed;top:-100px;left:1rem;z-index:1000;background:var(--text);color:#fff;padding:.7rem 1rem;border-radius:.4rem;font-weight:700}.skip-link:focus{top:1rem}.site-header{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line);background:rgba(255,255,255,.97);backdrop-filter:blur(10px)}.header-inner{width:min(calc(100% - 2rem),var(--content-width));min-height:68px;margin:0 auto;display:flex;align-items:center;gap:1rem}.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:750;letter-spacing:-.02em;white-space:nowrap}.brand-mark{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--text);border-radius:8px;background:#fff;color:var(--text);font-family:"JetBrains Mono",monospace;font-size:.84rem;font-weight:700}.search-wrap{margin-left:auto;width:min(420px,52vw);position:relative}.search-wrap input{width:100%;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--text);padding:.72rem 1rem .72rem 2.55rem;font:inherit;outline:none}.search-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}.search-icon{position:absolute;left:.9rem;top:50%;transform:translateY(-50%);color:var(--muted)}.hero{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto;padding:clamp(3.5rem,8vw,6rem) 0 3rem}.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:clamp(2rem,5vw,5rem);align-items:start}.eyebrow{display:inline-block;margin-bottom:1rem;color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}.eyebrow::before{display:none}h1{max-width:900px;margin:0;font-size:clamp(2.5rem,6vw,5.2rem);line-height:1.02;letter-spacing:-.05em}.gradient-text{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--text)}.hero-copy{max-width:760px;margin:1.5rem 0 0;color:var(--muted);font-size:clamp(1rem,1.7vw,1.14rem)}.hero-copy strong{color:var(--text);font-weight:700}.hero-card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:1rem}.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.8rem}.metric{border:1px solid var(--line);border-radius:8px;padding:.7rem;background:var(--surface-2)}.metric strong{display:block;color:var(--text)}.metric span{color:var(--muted);font-size:.7rem}.author-note{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto 1.5rem;padding:1.25rem 1.4rem;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;background:var(--surface-2)}.author-note h2{margin:0 0 .45rem;font-size:1rem}.author-note p{margin:.25rem 0;color:var(--muted);font-size:.94rem}.library-nav{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto 2rem;display:flex;flex-wrap:wrap;gap:.65rem}.library-link{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--text);padding:.62rem .85rem;text-decoration:none;font-weight:650;font-size:.84rem}.library-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}.library-link.primary{color:#fff;border-color:var(--accent);background:var(--accent)}.layout{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto;display:grid;grid-template-columns:270px minmax(0,1fr);gap:2.5rem;align-items:start}.toc{position:sticky;top:90px;max-height:calc(100vh - 112px);overflow:auto;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#fff}.toc h2{margin:0 0 .75rem;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.toc nav{display:grid;gap:.1rem}.toc a{display:flex;gap:.6rem;align-items:flex-start;padding:.46rem .5rem;border-radius:5px;color:var(--muted);text-decoration:none;font-size:.81rem;line-height:1.35}.toc a span{color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:.68rem;padding-top:.08rem}.toc a:hover,.toc a.active{color:var(--text);background:var(--surface-2)}.guide-section{display:grid;grid-template-columns:62px minmax(0,1fr);gap:1rem;padding:0 0 4rem}.section-number{position:sticky;top:94px;align-self:start;display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:.78rem;font-weight:700}.section-content h2{margin:0;font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.18;letter-spacing:-.035em}.section-intro{max-width:820px;margin:.8rem 0 1.4rem;color:var(--muted)}.examples-grid{display:grid;gap:.9rem}.example-card{overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#fff}.example-heading{display:flex;justify-content:space-between;align-items:center;gap:1rem;min-height:50px;padding:.68rem .8rem .68rem .9rem;border-bottom:1px solid var(--line);background:var(--surface-2)}.example-heading h3{margin:0;font-size:.9rem;font-weight:650}.copy-button{border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--muted);padding:.36rem .62rem;font:600 .72rem Inter,sans-serif;cursor:pointer}pre[class*="language-"],pre{margin:0!important;border-radius:0!important;background:#f6f8fa!important;color:#24292f!important;padding:1.15rem!important;overflow-x:auto;text-shadow:none!important}code[class*="language-"],pre code{color:#24292f!important;text-shadow:none!important;font-family:"JetBrains Mono",monospace!important;font-size:.82rem!important;line-height:1.62!important;white-space:pre}.no-results{display:none;margin:2rem 0 5rem;padding:1.5rem;border:1px dashed var(--line);border-radius:8px;color:var(--muted);text-align:center}.footer{margin-top:2rem;border-top:1px solid var(--line);background:var(--surface-2)}.footer-inner{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto;padding:1.7rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.84rem}.back-to-top{text-decoration:none;color:var(--text);font-weight:650;white-space:nowrap}@media(max-width:980px){.hero-grid,.layout{grid-template-columns:1fr}.toc{position:static;max-height:none}.toc nav{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:680px){.header-inner{flex-wrap:wrap;padding:.65rem 0}.search-wrap{order:2;width:100%}.hero{padding-top:3rem}.hero-meta{grid-template-columns:1fr}.toc nav{grid-template-columns:1fr}.guide-section{grid-template-columns:1fr;gap:.7rem}.section-number{position:static;width:42px;height:42px}.footer-inner{flex-direction:column}}
+
+    /* Keep programming operators as their original characters. */
+    pre,
+    code,
+    pre code,
+    code[class*="language-"],
+    pre[class*="language-"] {
+      font-variant-ligatures: none !important;
+      font-feature-settings: "liga" 0, "calt" 0 !important;
+      -webkit-font-feature-settings: "liga" 0, "calt" 0 !important;
+      text-rendering: optimizeSpeed;
+    }
+
+  
+    .breadcrumbs { width:min(calc(100% - 2rem),var(--content-width)); margin:1rem auto 0; font-size:.82rem; color:var(--muted); }
+    .breadcrumbs ol { display:flex; flex-wrap:wrap; gap:.45rem; list-style:none; padding:0; margin:0; }
+    .breadcrumbs li:not(:last-child)::after { content:"/"; margin-left:.45rem; color:#999; }
+    .breadcrumbs a { text-decoration:none; }
+    .breadcrumbs a:hover { color:var(--accent); }
+    .course-details { width:min(calc(100% - 2rem),var(--content-width)); margin:0 auto 1.5rem; display:flex; flex-wrap:wrap; gap:.55rem; }
+    .course-details span { border:1px solid var(--line); border-radius:999px; padding:.35rem .65rem; color:var(--muted); font-size:.78rem; background:#fff; }
+    .related-guides { width:min(calc(100% - 2rem),var(--content-width)); margin:1rem auto 3rem; padding-top:2rem; border-top:1px solid var(--line); }
+    .related-guides h2 { margin:0 0 1rem; font-size:1.45rem; }
+    .related-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+    .related-card { border:1px solid var(--line); border-radius:8px; padding:1rem; text-decoration:none; background:#fff; }
+    .related-card:hover { border-color:var(--accent); background:var(--accent-soft); }
+    .related-card strong { display:block; margin-bottom:.25rem; }
+    .related-card span { color:var(--muted); font-size:.85rem; }
+    @media(max-width:680px){ .related-grid{grid-template-columns:1fr;} }
+
+.hero-learning-map{min-height:230px;padding:1.15rem;background:linear-gradient(180deg,#fbfcfb,#f6f8f7);border:1px solid #e8ebe9;border-radius:8px}
+.hero-learning-map .map-label{margin:0 0 .9rem;color:var(--accent);font-size:.72rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.learning-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;align-items:center;margin:1rem 0}
+.flow-step{min-height:76px;display:grid;place-items:center;text-align:center;border:1px solid var(--line);border-radius:8px;background:#fff;padding:.6rem;font-size:.8rem;font-weight:700;line-height:1.25}
+.flow-step::before{content:attr(data-step);display:block;color:var(--accent);font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:700;margin-bottom:.28rem}
+.hero-learning-map .map-note{margin:1rem 0 0;color:var(--muted);font-size:.82rem;line-height:1.55}
+.progress-line{height:5px;border-radius:999px;background:#e5e9e7;overflow:hidden;margin:.9rem 0 .2rem}
+.progress-line span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--accent),#8baea4)}
+@media(max-width:680px){.learning-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-learning-map{min-height:auto}}
+
+.interview-section{margin-top:1rem}
+.definition-box{border:1px solid var(--line);border-radius:8px;background:#fff;padding:1rem 1.05rem;margin:.75rem 0}
+.definition-box h3{margin:0 0 .35rem;font-size:.95rem}
+.definition-box p{margin:.25rem 0;color:var(--muted);font-size:.9rem}
+.definition-box strong{color:var(--text)}
+.compare-table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.86rem}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:.68rem .75rem;text-align:left;vertical-align:top}
+.compare-table th{background:var(--surface-2);font-weight:700}
+.interview-q{border:1px solid var(--line);border-radius:8px;padding:1rem;margin:.8rem 0;background:#fff}
+.interview-q h3{margin:0 0 .45rem;font-size:.95rem}
+.interview-q p{margin:.3rem 0;color:var(--muted);font-size:.9rem}
+.interview-q .answer{color:var(--text)}
+.quick-terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.quick-term{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:#fff}
+.quick-term strong{display:block;margin-bottom:.28rem;font-size:.9rem}
+.quick-term span{display:block;color:var(--muted);font-size:.84rem;line-height:1.5}
+@media(max-width:680px){.quick-terms{grid-template-columns:1fr}.compare-table{display:block;overflow-x:auto}}
+
+.practical-tests{margin-top:1.5rem}
+.practical-tests>h3{margin:1.4rem 0 .4rem;font-size:1.15rem}
+.practical-tests>.section-lead{margin:0 0 1rem;color:var(--muted);font-size:.92rem}
+.practice-card{border:1px solid var(--line);border-radius:8px;background:#fff;margin:.9rem 0;overflow:hidden}
+.practice-head{padding:.75rem .9rem;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.practice-head strong{display:block;font-size:.92rem}
+.practice-head span{display:block;color:var(--muted);font-size:.78rem;margin-top:.2rem}
+.practice-body{padding:.95rem}
+.practice-body p{margin:.35rem 0;color:var(--muted);font-size:.9rem}
+.practice-body p strong{color:var(--text)}
+.practice-body pre{margin:.75rem 0 0!important}
+.answer-structure{border-left:4px solid var(--accent);background:var(--surface-2);padding:.85rem 1rem;margin:.8rem 0}
+.answer-structure p{margin:.25rem 0;font-size:.88rem;color:var(--muted)}
+.answer-structure strong{color:var(--text)}
+
+.interview-main{width:min(calc(100% - 2rem),var(--content-width));margin:0 auto 4rem}
+.interview-hero{padding:4rem 0 2rem;max-width:900px}
+.interview-hero h1{margin:.5rem 0 1rem}
+.interview-hero p{color:var(--muted);font-size:1.05rem}
+.interview-section-wide{padding:2.5rem 0;border-top:1px solid var(--line)}
+.interview-section-wide h2{font-size:1.8rem;letter-spacing:-.03em;margin:0 0 .65rem}
+.interview-section-wide>.lead{color:var(--muted);max-width:860px}
+.question-bank{display:grid;gap:.85rem;margin-top:1.2rem}
+.bq{border:1px solid var(--line);border-radius:8px;background:#fff;padding:1rem}
+.bq h3{margin:0 0 .45rem;font-size:1rem}
+.bq p{margin:.35rem 0;color:var(--muted);font-size:.9rem}
+.bq .response{color:var(--text)}
+.star-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin:1rem 0}
+.star-card{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:var(--surface-2)}
+.star-card strong{display:block;color:var(--accent);font-size:1rem}.star-card span{font-size:.82rem;color:var(--muted)}
+.test-checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:1rem 0}
+.test-checklist div{border:1px solid var(--line);border-radius:8px;padding:.9rem}
+.test-checklist strong{display:block;margin-bottom:.25rem}.test-checklist span{color:var(--muted);font-size:.85rem}
+.tool-prep{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.tool-prep a{border:1px solid var(--line);border-radius:8px;padding:1rem;text-decoration:none;background:#fff}
+.tool-prep a:hover{border-color:var(--accent);background:var(--accent-soft)}
+.tool-prep strong{display:block;margin-bottom:.25rem}
+.tool-prep span{font-size:.84rem;color:var(--muted)}
+@media(max-width:800px){.tool-prep{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.star-grid,.tool-prep{grid-template-columns:1fr}.test-checklist{grid-template-columns:1fr}}
+</style>
+</head>
+<body id="top">
+<a class="skip-link" href="#main-content">Skip to interview guide</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="#top"><span class="brand-mark">IV</span><span>Interview Preparation</span></a>
+<div class="search-wrap"><span aria-hidden="true" class="search-icon">⌕</span><input aria-label="Search interview guide" id="guide-search" placeholder="Search questions, STAR, technical tests…" type="search"/></div>
+</div></header>
+<nav aria-label="Breadcrumb" class="breadcrumbs"><ol><li><a href="../index.html">Home</a></li><li><a href="index.html">Learning Library</a></li><li aria-current="page">Interview Preparation</li></ol></nav>
+<main class="interview-main" id="main-content">
+<section class="interview-hero">
+<div class="eyebrow">Technical + behavioural preparation</div>
+<h1>Know the answer. Explain the reasoning. Show how you work.</h1>
+<p>Technical interviews rarely test syntax alone. Employers also want to see how you clarify a problem, validate data, communicate trade-offs and respond when something goes wrong. Use this guide alongside the practical interview sections in each Learning Library guide.</p>
+</section>
+<nav aria-label="Learning library navigation" class="library-nav" style="width:100%;margin-left:0;margin-right:0">
+<a class="library-link" href="python-guide.html">Python</a>
+<a class="library-link" href="r-guide.html">R</a>
+<a class="library-link" href="sql-guide.html">SQL</a>
+<a class="library-link" href="excel-guide.html">Excel</a>
+<a class="library-link" href="power-bi-guide.html">Power BI</a>
+<a class="library-link" href="dax-guide.html">DAX</a>
+<a class="library-link primary" href="interview-preparation.html">Interview Guide</a>
+<a class="library-link" href="interview-glossary.html">Glossary</a>
+</nav>
+<section class="interview-section-wide searchable-section" id="technical-tests">
+<h2>How to approach a practical technical test</h2>
+<p class="lead">A technically correct answer is stronger when the interviewer can see that you understand the data and can defend the approach.</p>
+<div class="test-checklist"><div><strong>Clarify the task</strong><span>Repeat the business question in your own words. Ask about expected output, edge cases, grain and assumptions.</span></div><div><strong>Inspect before coding</strong><span>Check columns, data types, row counts, nulls, duplicates and keys before writing the final solution.</span></div><div><strong>Think aloud</strong><span>Explain why you chose a join, function, formula or model. Reasoning is often assessed as much as syntax.</span></div><div><strong>Build in small steps</strong><span>Produce an initial correct result, inspect it, then add complexity.</span></div><div><strong>Validate the answer</strong><span>Check totals, unmatched keys, duplicates, edge cases or a small manual example.</span></div><div><strong>Discuss trade-offs</strong><span>If several approaches are valid, say why you chose one and when you would use another.</span></div><div><strong>Handle errors calmly</strong><span>Read the error, isolate the smallest failing step, inspect inputs and say what you will test next.</span></div><div><strong>Finish with meaning</strong><span>Explain what the result tells the stakeholder and any limitations or follow-up checks.</span></div></div>
+<div class="answer-structure"><p><strong>A useful live-test sentence:</strong> “Before I write the final query, I’d like to confirm the grain of the table and whether this key is unique. I’ll build the result in steps and then reconcile the row count and totals.”</p></div>
+</section>
+<section class="interview-section-wide searchable-section" id="technical-answer">
+<h2>How to answer a technical definition question</h2>
+<p class="lead">Do not begin with a long textbook definition. A strong interview answer usually has four parts.</p>
+<div class="star-grid">
+<div class="star-card"><strong>1. Define</strong><span>Say what the term is in one clear sentence.</span></div>
+<div class="star-card"><strong>2. Distinguish</strong><span>Compare it with the nearest concept people confuse it with.</span></div>
+<div class="star-card"><strong>3. Use</strong><span>Say when or why you would use it.</span></div>
+<div class="star-card"><strong>4. Example</strong><span>Give a short practical example if useful.</span></div>
+</div>
+<div class="answer-structure">
+<p><strong>Example — “What is a CTE?”</strong></p>
+<p>“A CTE is a named result set defined with WITH and available to the statement that follows. I mainly use it to make a complex query easier to read or for recursive logic. Unlike a temporary table, it is not normally created as a separate stored object that I can reuse across several statements.”</p>
+</div>
+</section>
+<section class="interview-section-wide searchable-section" id="tool-practice">
+<h2>Tool-specific practical preparation</h2>
+<p class="lead">Each guide now contains common practical tests, worked answers and an explanation of what the interviewer is testing.</p>
+<div class="tool-prep">
+<a href="python-guide.html#interview-refresher"><strong>Python</strong><span>pandas, cleaning, joins, data structures and model judgement.</span></a>
+<a href="r-guide.html#interview-refresher"><strong>R</strong><span>dplyr, joins, missing data, reshaping and statistical reasoning.</span></a>
+<a href="sql-guide.html#interview-refresher"><strong>SQL</strong><span>joins, windows, ranking, CTEs, procedures, QA and performance.</span></a>
+<a href="excel-guide.html#interview-refresher"><strong>Excel</strong><span>lookups, SUMIFS, references, PivotTables and Power Query.</span></a>
+<a href="power-bi-guide.html#interview-refresher"><strong>Power BI</strong><span>star schemas, measures, storage modes, RLS and performance.</span></a>
+<a href="dax-guide.html#interview-refresher"><strong>DAX</strong><span>context, CALCULATE, SUMX, shares and measure design.</span></a>
+</div>
+</section>
+<section class="interview-section-wide searchable-section" id="star">
+<h2>Behavioural questions: use STAR without sounding rehearsed</h2>
+<p class="lead">Behavioural questions use past evidence to understand how you are likely to work in future. STAR keeps your answer structured, but the Action should normally be the longest part because it shows what you personally did.</p>
+<div class="star-grid">
+<div class="star-card"><strong>Situation</strong><span>Give only the context needed to understand the example.</span></div>
+<div class="star-card"><strong>Task</strong><span>State your responsibility, target or problem.</span></div>
+<div class="star-card"><strong>Action</strong><span>Explain your decisions and what you personally did.</span></div>
+<div class="star-card"><strong>Result</strong><span>Give the outcome, evidence and what you learned.</span></div>
+</div>
+<div class="answer-structure">
+<p><strong>Useful balance:</strong> Situation 10–15%, Task 10%, Action 55–65%, Result and learning 15–25%.</p>
+<p><strong>Avoid:</strong> spending two minutes describing the background and only one sentence on what you actually did.</p>
+</div>
+</section>
+<section class="interview-section-wide searchable-section" id="behavioural-bank">
+<h2>Common behavioural questions and how to respond</h2>
+<p class="lead">Prepare several genuine examples that can be adapted across these themes rather than memorising fifteen separate speeches.</p>
+<div class="question-bank"><article class="bq"><h3>Tell me about yourself.</h3><p class="response">Give a 60–90 second professional summary: what you do now, the most relevant experience you bring, two or three strengths that match the role, and why this opportunity is the logical next step. Do not retell your entire CV.</p></article><article class="bq"><h3>Why do you want this role?</h3><p class="response">Connect three things: the work in the job description, evidence that you can do it, and what you genuinely want to develop or contribute. Make the answer specific to the role.</p></article><article class="bq"><h3>Tell me about a difficult data project.</h3><p class="response">Use STAR. Explain what made it difficult—poor data quality, unclear requirements, time pressure or technical constraints—then focus on how you diagnosed the problem, prioritised risks, communicated and delivered a reliable result.</p></article><article class="bq"><h3>Tell me about a mistake you made.</h3><p class="response">Choose a real but recoverable mistake. Explain how you detected it, corrected the impact, informed the right people and changed the process so the same error was less likely to recur.</p></article><article class="bq"><h3>Tell me about a time you disagreed with a stakeholder.</h3><p class="response">Show respectful challenge. Explain how you clarified the real need, used evidence, offered options and reached a decision. The aim is not to prove that you won.</p></article><article class="bq"><h3>How do you explain technical findings to a non-technical audience?</h3><p class="response">Start with the decision or question, remove unnecessary technical detail, use plain language and an appropriate visual, state limitations, and check that the audience understands the implication.</p></article><article class="bq"><h3>Tell me about a time priorities changed suddenly.</h3><p class="response">Show how you reassessed urgency and impact, clarified the new priority, renegotiated deadlines where needed, protected critical quality checks and kept affected people informed.</p></article><article class="bq"><h3>Tell me about a missed deadline.</h3><p class="response">Take ownership. Explain the cause without blaming others, what you communicated, how you recovered the work, and what changed in your planning, estimation or escalation afterwards.</p></article><article class="bq"><h3>Tell me about a time you improved a process.</h3><p class="response">State the original problem and cost, describe the improvement you introduced, how you tested or gained buy-in, and quantify the result where possible: time saved, errors reduced or turnaround improved.</p></article><article class="bq"><h3>Describe a time you worked with poor-quality data.</h3><p class="response">Explain how you profiled the data, identified missing or invalid values and duplicates, traced likely causes, agreed treatment rules, documented assumptions and added QA checks.</p></article><article class="bq"><h3>How do you handle ambiguous requirements?</h3><p class="response">Clarify the decision the analysis needs to support, identify users and definitions, write down assumptions, show an early prototype, confirm acceptance criteria and keep a record of changes.</p></article><article class="bq"><h3>Tell me about a time you influenced without authority.</h3><p class="response">Explain how you built credibility with evidence, understood the other person's constraints, presented a practical recommendation and gained agreement without relying on hierarchy.</p></article><article class="bq"><h3>What is your greatest weakness?</h3><p class="response">Choose a genuine development area that is not a core requirement you cannot perform. Explain what you are doing to manage it and give evidence of progress.</p></article><article class="bq"><h3>Why are you leaving your current role?</h3><p class="response">Stay constructive. Focus on the type of responsibility, environment or development you are moving towards. Avoid criticising your current employer or colleagues.</p></article><article class="bq"><h3>Why should we hire you?</h3><p class="response">Summarise the strongest match between the role and your evidence: technical capability, domain understanding, delivery experience and communication. Finish with the value you expect to add.</p></article></div>
+</section>
+<section class="interview-section-wide searchable-section" id="story-bank">
+<h2>Build a reusable interview story bank</h2>
+<p class="lead">One strong project can answer several questions when you change the emphasis.</p>
+<div class="test-checklist">
+<div><strong>Quality</strong><span>A time you found an error, prevented a bad output or improved validation.</span></div>
+<div><strong>Delivery</strong><span>A difficult deadline, competing priorities or a dependency you had to manage.</span></div>
+<div><strong>Stakeholders</strong><span>A time you clarified requirements, challenged a request or explained findings.</span></div>
+<div><strong>Improvement</strong><span>Automation, simplification, documentation or a process you made more reliable.</span></div>
+<div><strong>Learning</strong><span>A tool or domain you had to learn quickly and how you became productive.</span></div>
+<div><strong>Teamwork</strong><span>Collaboration, disagreement, mentoring or influencing without formal authority.</span></div>
+</div>
+<div class="answer-structure" id="worked-star-example">
+<p><strong>Worked STAR example — “Tell me about a time you found a data-quality problem.”</strong></p>
+<p><strong>Situation:</strong> “I was preparing a recurring performance report and noticed that one organisation’s response count had changed much more than expected.”</p>
+<p><strong>Task:</strong> “I needed to establish whether the change was genuine before the report went to stakeholders.”</p>
+<p><strong>Action:</strong> “I reconciled the total row count against the source, checked duplicate keys and unmatched joins, then traced the difference to a mapping issue introduced in the latest file. I corrected the mapping, reran the affected outputs and added an automated QA check comparing source and reported totals so the same problem would be flagged earlier in future.”</p>
+<p><strong>Result:</strong> “The corrected report was issued with accurate figures, and the additional check became part of the routine process. The important lesson for me was to reconcile key totals before relying on downstream visuals.”</p>
+</div></section>
+<section class="interview-section-wide searchable-section" id="final-checklist">
+<h2>Final preparation checklist</h2>
+<div class="test-checklist">
+<div><strong>Job description</strong><span>Match every essential skill to one piece of evidence from your experience.</span></div>
+<div><strong>Definitions</strong><span>Explain important terms in plain language without reading a memorised paragraph.</span></div>
+<div><strong>Practical tasks</strong><span>Practise joins, summaries, cleaning, validation and interpretation in the relevant tools.</span></div>
+<div><strong>Projects</strong><span>Be ready to explain purpose, data, approach, QA, result, limitation and your personal contribution.</span></div>
+<div><strong>Company</strong><span>Know what the organisation does and how the role contributes.</span></div>
+<div><strong>Your questions</strong><span>Prepare thoughtful questions about the team, data, priorities, expectations and success measures.</span></div>
+</div>
+</section>
+<section class="interview-section-wide searchable-section" id="research-basis">
+<h2>Research basis</h2>
+<p class="lead">The question themes were expanded after reviewing recent interview-preparation material from Indeed UK and Robert Half, including data-analyst, SQL, Excel, Python/pandas and Power BI interview guidance. SQL and Power BI technical definitions were checked against Microsoft Learn documentation. The explanations and worked answers in this library are written specifically for this resource.</p>
+<ul style="color:var(--muted);font-size:.88rem"><li><a href="https://uk.indeed.com/career-advice/interviewing/data-analyst-interview-questions" rel="noopener noreferrer" target="_blank">Indeed UK — Data analyst interview questions</a></li><li><a href="https://uk.indeed.com/career-advice/interviewing/sql-interview-questions" rel="noopener noreferrer" target="_blank">Indeed UK — Common SQL interview questions</a></li><li><a href="https://uk.indeed.com/career-advice/interviewing/excel-interview-questions-data-analyst" rel="noopener noreferrer" target="_blank">Indeed UK — Excel interview questions for data analysts</a></li><li><a href="https://uk.indeed.com/career-advice/interviewing/pandas-interview-questions" rel="noopener noreferrer" target="_blank">Indeed UK — Python pandas interview questions</a></li><li><a href="https://uk.indeed.com/career-advice/cvs-cover-letters/power-bi-interview-questions" rel="noopener noreferrer" target="_blank">Indeed UK — Power BI interview questions</a></li><li><a href="https://www.roberthalf.com/us/en/insights/hiring-help/harnessing-the-power-of-behavioral-interviews" rel="noopener noreferrer" target="_blank">Robert Half — behavioural interview guidance</a></li><li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/views/views" rel="noopener noreferrer" target="_blank">Microsoft Learn — SQL Server views</a></li><li><a href="https://learn.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql" rel="noopener noreferrer" target="_blank">Microsoft Learn — CREATE PROCEDURE</a></li><li><a href="https://learn.microsoft.com/en-us/sql/t-sql/queries/with-common-table-expression-transact-sql" rel="noopener noreferrer" target="_blank">Microsoft Learn — CTEs</a></li><li><a href="https://learn.microsoft.com/en-us/sql/relational-databases/tables/temporal-tables" rel="noopener noreferrer" target="_blank">Microsoft Learn — temporal tables</a></li></ul></section>
+<div class="no-results" id="no-results">No matching interview sections were found. Try a broader search term.</div>
+</main>
+<footer class="footer"><div class="footer-inner"><div>Written and maintained by <strong>Imonikhe Ayeni</strong>.<br/>Last updated: September 2026.</div><a class="back-to-top" href="#top">Back to top ↑</a></div></footer>
+<script>
+const search=document.getElementById("guide-search");
+const sections=[...document.querySelectorAll(".searchable-section")];
+const noResults=document.getElementById("no-results");
+search.addEventListener("input",()=>{
+ const q=search.value.trim().toLowerCase(); let n=0;
+ sections.forEach(s=>{const m=!q||s.textContent.toLowerCase().includes(q);s.style.display=m?"block":"none";if(m)n++;});
+ noResults.style.display=n?"none":"block";
+});
+</script>
+</body>
+</html>

@@ -4,7 +4,6 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
 <meta content="Imonikhe Ayeni" name="author"/>
 <title>SQL for Data Analysis and Reporting | Imonikhe Ayeni</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -41,8 +40,51 @@
     .related-card strong { display:block; margin-bottom:.25rem; }
     .related-card span { color:var(--muted); font-size:.85rem; }
     @media(max-width:680px){ .related-grid{grid-template-columns:1fr;} }
+
+.hero-learning-map{min-height:230px;padding:1.15rem;background:linear-gradient(180deg,#fbfcfb,#f6f8f7);border:1px solid #e8ebe9;border-radius:8px}
+.hero-learning-map .map-label{margin:0 0 .9rem;color:var(--accent);font-size:.72rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.learning-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;align-items:center;margin:1rem 0}
+.flow-step{min-height:76px;display:grid;place-items:center;text-align:center;border:1px solid var(--line);border-radius:8px;background:#fff;padding:.6rem;font-size:.8rem;font-weight:700;line-height:1.25}
+.flow-step::before{content:attr(data-step);display:block;color:var(--accent);font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:700;margin-bottom:.28rem}
+.hero-learning-map .map-note{margin:1rem 0 0;color:var(--muted);font-size:.82rem;line-height:1.55}
+.progress-line{height:5px;border-radius:999px;background:#e5e9e7;overflow:hidden;margin:.9rem 0 .2rem}
+.progress-line span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--accent),#8baea4)}
+@media(max-width:680px){.learning-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-learning-map{min-height:auto}}
+
+.interview-section{margin-top:1rem}
+.definition-box{border:1px solid var(--line);border-radius:8px;background:#fff;padding:1rem 1.05rem;margin:.75rem 0}
+.definition-box h3{margin:0 0 .35rem;font-size:.95rem}
+.definition-box p{margin:.25rem 0;color:var(--muted);font-size:.9rem}
+.definition-box strong{color:var(--text)}
+.compare-table{width:100%;border-collapse:collapse;margin:.9rem 0;font-size:.86rem}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:.68rem .75rem;text-align:left;vertical-align:top}
+.compare-table th{background:var(--surface-2);font-weight:700}
+.interview-q{border:1px solid var(--line);border-radius:8px;padding:1rem;margin:.8rem 0;background:#fff}
+.interview-q h3{margin:0 0 .45rem;font-size:.95rem}
+.interview-q p{margin:.3rem 0;color:var(--muted);font-size:.9rem}
+.interview-q .answer{color:var(--text)}
+.quick-terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+.quick-term{border:1px solid var(--line);border-radius:8px;padding:.9rem;background:#fff}
+.quick-term strong{display:block;margin-bottom:.28rem;font-size:.9rem}
+.quick-term span{display:block;color:var(--muted);font-size:.84rem;line-height:1.5}
+@media(max-width:680px){.quick-terms{grid-template-columns:1fr}.compare-table{display:block;overflow-x:auto}}
+
+.practical-tests{margin-top:1.5rem}
+.practical-tests>h3{margin:1.4rem 0 .4rem;font-size:1.15rem}
+.practical-tests>.section-lead{margin:0 0 1rem;color:var(--muted);font-size:.92rem}
+.practice-card{border:1px solid var(--line);border-radius:8px;background:#fff;margin:.9rem 0;overflow:hidden}
+.practice-head{padding:.75rem .9rem;background:var(--surface-2);border-bottom:1px solid var(--line)}
+.practice-head strong{display:block;font-size:.92rem}
+.practice-head span{display:block;color:var(--muted);font-size:.78rem;margin-top:.2rem}
+.practice-body{padding:.95rem}
+.practice-body p{margin:.35rem 0;color:var(--muted);font-size:.9rem}
+.practice-body p strong{color:var(--text)}
+.practice-body pre{margin:.75rem 0 0!important}
+.answer-structure{border-left:4px solid var(--accent);background:var(--surface-2);padding:.85rem 1rem;margin:.8rem 0}
+.answer-structure p{margin:.25rem 0;font-size:.88rem;color:var(--muted)}
+.answer-structure strong{color:var(--text)}
 </style>
-<meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." name="description"/><link href="https://imonikheayeni.com/learning-library/sql-guide.html" rel="canonical"/><meta content="article" property="og:type"/><meta content="SQL for Data Analysis and Reporting" property="og:title"/><meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." property="og:description"/><meta content="https://imonikheayeni.com/learning-library/sql-guide.html" property="og:url"/><meta content="Imonikhe Ayeni" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="SQL for Data Analysis and Reporting" name="twitter:title"/><meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "@id": "https://imonikheayeni.com/learning-library/sql-guide.html#article", "headline": "SQL for Data Analysis and Reporting", "description": "Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples.", "url": "https://imonikheayeni.com/learning-library/sql-guide.html", "datePublished": "2026-08-01", "dateModified": "2026-08-01", "inLanguage": "en-GB", "proficiencyLevel": "Beginner to intermediate", "timeRequired": "PT9M", "keywords": "SQL, Databases, Data Analysis, Reporting, Data Quality", "author": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "publisher": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "isPartOf": {"@type": "CollectionPage", "name": "Learning Library", "url": "https://imonikheayeni.com/learning-library/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://imonikheayeni.com/"}, {"@type": "ListItem", "position": 2, "name": "Learning Library", "item": "https://imonikheayeni.com/learning-library/"}, {"@type": "ListItem", "position": 3, "name": "SQL", "item": "https://imonikheayeni.com/learning-library/sql-guide.html"}]}]}</script></head>
+<meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." name="description"/><link href="https://imonikheayeni.com/learning-library/sql-guide.html" rel="canonical"/><meta content="article" property="og:type"/><meta content="SQL for Data Analysis and Reporting" property="og:title"/><meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." property="og:description"/><meta content="https://imonikheayeni.com/learning-library/sql-guide.html" property="og:url"/><meta content="Imonikhe Ayeni" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="SQL for Data Analysis and Reporting" name="twitter:title"/><meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "@id": "https://imonikheayeni.com/learning-library/sql-guide.html#article", "headline": "SQL for Data Analysis and Reporting", "description": "Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples.", "url": "https://imonikheayeni.com/learning-library/sql-guide.html", "datePublished": "2026-08-01", "dateModified": "2026-09-12", "inLanguage": "en-GB", "proficiencyLevel": "Beginner to intermediate", "timeRequired": "PT9M", "keywords": "SQL, Databases, Data Analysis, Reporting, Data Quality", "author": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "publisher": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "isPartOf": {"@type": "CollectionPage", "name": "Learning Library", "url": "https://imonikheayeni.com/learning-library/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://imonikheayeni.com/"}, {"@type": "ListItem", "position": 2, "name": "Learning Library", "item": "https://imonikheayeni.com/learning-library/"}, {"@type": "ListItem", "position": 3, "name": "SQL", "item": "https://imonikheayeni.com/learning-library/sql-guide.html"}]}]}</script><meta content="index, follow, max-image-preview:large" name="robots"/></head>
 <body id="top">
 <a class="skip-link" href="#main-content">Skip to the guide</a>
 <header class="site-header">
@@ -71,33 +113,29 @@
             contents panel to find a specific topic.
           </p>
 </div>
-<aside aria-label="Example SQL query" class="hero-card">
-<pre><code class="language-sql">SELECT
-    hospital_id,
-    COUNT(*) AS patients,
-    AVG(age) AS mean_age
-FROM patients
-GROUP BY hospital_id
-ORDER BY patients DESC;</code></pre>
+<aside aria-label="SQL learning path preview" class="hero-card">
+<div class="hero-learning-map">
+<p class="map-label">A beginner-first route</p>
+<div class="learning-flow"><div class="flow-step" data-step="01">Tables</div><div class="flow-step" data-step="02">Query</div><div class="flow-step" data-step="03">Join</div><div class="flow-step" data-step="04">Report</div></div>
+<div aria-hidden="true" class="progress-line"><span></span></div>
+<p class="map-note">Learn how data is stored first, then build queries step by step.</p>
+</div>
 <div class="hero-meta">
-<div class="metric"><strong>19</strong><span>sections</span></div>
+<div class="metric"><strong>19</strong><span>learning sections</span></div>
 <div class="metric"><strong>60+</strong><span>examples</span></div>
-<div class="metric"><strong>Search</strong><span>built in</span></div>
+<div class="metric"><strong>Part 3</strong><span>learning library</span></div>
 </div>
 </aside>
 </div>
-</section><div aria-label="Course information" class="course-details"><span>Beginner to intermediate</span><span>About 9 minutes</span><span>Last updated August 2026</span></div>
-<section class="author-note">
-<h2>A note from the author</h2>
-<p>I’m Imonikhe Ayeni. I use SQL to extract, validate and summarise data for analysis and reporting.</p>
-<p>I put this reference together to give beginners a clear route from their first SELECT statement to practical analytical queries.</p>
-</section>
-<nav aria-label="Learning library navigation" class="library-nav">
-<a class="library-link" href="python-guide.html">Python</a>
-<a class="library-link" href="r-guide.html">R</a>
-<a class="library-link primary" href="sql-guide.html">SQL</a>
-<a class="library-link" href="../index.html#portfolio">Back to portfolio</a>
-</nav>
+</section><div aria-label="Course information" class="course-details"><span>Beginner to intermediate</span><span>About 9 minutes</span><span>Last updated September 2026</span><span>Includes interview refresher</span></div>
+<section class="author-note"><h2>A note from the author</h2><p>I’m Imonikhe Ayeni. I use SQL to extract, check and summarise data for analysis and reporting.</p><p>SQL is easiest to learn by writing small queries. Start with SELECT and WHERE, then add summaries and joins once those feel natural.</p></section>
+<nav aria-label="Learning library navigation" class="library-nav"><a class="library-link" href="python-guide.html">Part 1: Python</a>
+<a class="library-link" href="r-guide.html">Part 2: R</a>
+<a class="library-link primary" href="sql-guide.html">Part 3: SQL</a>
+<a class="library-link" href="excel-guide.html">Part 4: Excel</a>
+<a class="library-link" href="power-bi-guide.html">Part 5: Power BI</a>
+<a class="library-link" href="dax-guide.html">Part 6: DAX</a>
+<a class="library-link" href="interview-preparation.html">Interview Guide</a><a class="library-link" href="interview-glossary.html">Interview Glossary</a><a class="library-link" href="../index.html#portfolio">Back to portfolio</a></nav>
 <div class="layout">
 <aside aria-label="Table of contents" class="toc">
 <h2>Contents</h2>
@@ -115,11 +153,11 @@ ORDER BY patients DESC;</code></pre>
 <a href="#text"><span>12</span>Working with text</a>
 <a href="#data-quality"><span>13</span>Data-quality checks</a>
 <a href="#modifying-data"><span>14</span>Updating and deleting data</a>
-<a href="#views-indexes"><span>15</span>Views and indexes</a>
+<a href="#views-indexes"><span>15</span>Views, stored procedures and indexes</a>
 <a href="#analytics-project"><span>16</span>A complete analysis query</a>
 <a href="#python-r"><span>17</span>Using SQL with Python and R</a>
 <a href="#habits"><span>18</span>Good SQL habits</a>
-<a href="#learning-plan"><span>19</span>Four-week SQL learning plan</a></nav>
+<a href="#interview-refresher"><span>19</span>SQL interview refresher</a><a href="#learning-plan"><span>20</span>Four-week SQL learning plan</a></nav>
 </aside>
 <div>
 <div class="no-results" id="no-results">No matching sections were found. Try a broader search term.</div>
@@ -502,8 +540,12 @@ WHERE h.hospital_id IS NULL;</code></pre>
 <div class="section-number">09</div>
 <div class="section-content">
 <h2>Subqueries and CTEs</h2>
-<p class="section-intro">Subqueries place one query inside another. Common table expressions, written with WITH, often make complex queries easier to read.</p>
-<div class="examples-grid">
+<p class="section-intro">A subquery is a query nested inside another query. A Common Table Expression (CTE) is a named result set defined with WITH and available only to the statement that follows. Unlike a temporary table, a CTE is not normally stored as a separate table.</p>
+<div class="definition-box">
+<h3>Concept first: CTE vs temporary table</h3>
+<p><strong>CTE:</strong> improves readability inside one statement and can support recursion.</p>
+<p><strong>Temporary table:</strong> is materialised as a temporary database object and can usually be referenced by several statements during the session.</p>
+</div><div class="examples-grid">
 <article class="example-card">
 <div class="example-heading">
 <h3>Subquery</h3>
@@ -540,8 +582,13 @@ WHERE patients &gt;= 10;</code></pre>
 <div class="section-number">10</div>
 <div class="section-content">
 <h2>Window functions</h2>
-<p class="section-intro">Window functions calculate values across related rows without collapsing the result into one row per group.</p>
-<div class="examples-grid">
+<p class="section-intro">Window functions calculate values across related rows without collapsing the result into one row per group. For ranking questions, remember the difference: ROW_NUMBER always gives a unique sequence, RANK leaves gaps after ties, and DENSE_RANK does not leave gaps.</p>
+<div class="definition-box">
+<h3>Concept first: ROW_NUMBER vs RANK vs DENSE_RANK</h3>
+<p><strong>ROW_NUMBER:</strong> 1, 2, 3, 4 even when values are tied.</p>
+<p><strong>RANK:</strong> tied values can produce 1, 2, 2, 4.</p>
+<p><strong>DENSE_RANK:</strong> tied values can produce 1, 2, 2, 3.</p>
+</div><div class="examples-grid">
 <article class="example-card">
 <div class="example-heading">
 <h3>Row numbers</h3>
@@ -777,43 +824,56 @@ COMMIT;
 <section class="guide-section searchable-section" id="views-indexes">
 <div class="section-number">15</div>
 <div class="section-content">
-<h2>Views and indexes</h2>
-<p class="section-intro">Views save reusable queries. Indexes can speed up searches and joins, although they also add storage and maintenance costs.</p>
-<div class="examples-grid">
-<article class="example-card">
-<div class="example-heading">
-<h3>Create a view</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
-</div>
-<pre><code class="language-sql">CREATE VIEW patient_hospital_view AS
+<h2>Views, stored procedures and indexes</h2>
+<p class="section-intro">Views, stored procedures and indexes solve different database problems. A view is a saved query that behaves like a virtual table. A stored procedure is executable database logic that can accept parameters and run one or more statements. An index is a separate structure that can speed up searches, joins and sorting, with storage and write-performance trade-offs. The procedure examples below use SQL Server T-SQL; syntax and features differ across database systems.</p>
+<div class="definition-box">
+<h3>Concept first: view vs stored procedure</h3>
+<p><strong>View:</strong> queried with SELECT and mainly used to present reusable data logic.</p>
+<p><strong>Stored procedure:</strong> executed as a database program and may contain parameters, multiple statements and data-changing logic.</p>
+<p>Not every database implements stored procedures in the same way.</p>
+</div><div class="examples-grid"><div class="definition-box">
+<h3>Interview answer: view vs stored procedure vs index</h3>
+<p><strong>View:</strong> a named SELECT query that you can query like a table. A normal view stores the query definition rather than a separate copy of the rows.</p>
+<p><strong>Stored procedure:</strong> a named executable routine in the database. It can accept parameters and contain multiple SQL statements and control-flow logic.</p>
+<p><strong>Index:</strong> a data structure that helps the database locate rows efficiently for suitable query patterns. It improves many reads but adds storage and maintenance work when data changes.</p>
+</div><article class="example-card"><div class="example-heading"><h3>Create and query a view</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div><pre><code class="language-sql">CREATE VIEW dbo.patient_hospital_view
+AS
 SELECT
     p.patient_id,
     p.patient_name,
     p.age,
     h.hospital_name,
     h.region
-FROM patients AS p
-LEFT JOIN hospitals AS h
-    ON p.hospital_id = h.hospital_id;</code></pre>
-</article>
-<article class="example-card">
-<div class="example-heading">
-<h3>Query the view</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
-</div>
-<pre><code class="language-sql">SELECT *
-FROM patient_hospital_view
-WHERE region = 'Wales';</code></pre>
-</article>
-<article class="example-card">
-<div class="example-heading">
-<h3>Create an index</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
-</div>
-<pre><code class="language-sql">CREATE INDEX idx_patients_hospital_id
-ON patients (hospital_id);</code></pre>
-</article>
-</div>
+FROM dbo.patients AS p
+LEFT JOIN dbo.hospitals AS h
+    ON p.hospital_id = h.hospital_id;
+GO
+
+SELECT *
+FROM dbo.patient_hospital_view
+WHERE region = 'Wales';</code></pre></article><article class="example-card"><div class="example-heading"><h3>Create a stored procedure with a parameter</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div><pre><code class="language-sql">CREATE OR ALTER PROCEDURE dbo.usp_GetPatientsByHospital
+    @HospitalID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        patient_id,
+        patient_name,
+        age
+    FROM dbo.patients
+    WHERE hospital_id = @HospitalID
+    ORDER BY patient_name;
+END;
+GO</code></pre></article><article class="example-card"><div class="example-heading"><h3>Execute the stored procedure</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div><pre><code class="language-sql">EXEC dbo.usp_GetPatientsByHospital
+    @HospitalID = 101;</code></pre></article><article class="example-card"><div class="example-heading"><h3>Create an index</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div><pre><code class="language-sql">CREATE INDEX idx_patients_hospital_id
+ON dbo.patients (hospital_id);</code></pre></article><div class="definition-box">
+<h3>When would you choose each one?</h3>
+<p><strong>View:</strong> when users or reports need a reusable table-like representation of a query.</p>
+<p><strong>Stored procedure:</strong> when you need parameterised executable logic, several coordinated statements, or controlled database operations.</p>
+<p><strong>Index:</strong> when frequent query patterns justify faster lookups and you have considered the cost to storage and writes.</p>
+<p><strong>Do not say a view and a stored procedure are interchangeable:</strong> a view is queried; a stored procedure is executed.</p>
+</div></div>
 </div>
 </section>
 <section class="guide-section searchable-section" id="analytics-project">
@@ -959,8 +1019,74 @@ FROM patients;</code></pre>
 </div>
 </div>
 </section>
-<section class="guide-section searchable-section" id="learning-plan">
-<div class="section-number">19</div>
+<section class="guide-section searchable-section interview-section" id="interview-refresher"><div class="section-number">19</div><div class="section-content"><h2>SQL key terms and interview refresher</h2><p class="section-intro">Use this section as a quick revision page before an interview or when a term comes up at work. The aim is to understand the idea well enough to explain it in plain language before memorising syntax.</p><div class="quick-terms"><div class="quick-term"><strong>View</strong><span>A named SELECT query that can be queried like a virtual table. A normal view stores the query definition rather than a separate copy of the rows; some systems also support materialised or indexed views.</span></div><div class="quick-term"><strong>Stored procedure</strong><span>A named executable routine stored in the database. It can accept parameters and contain multiple SQL statements and control-flow logic. Exact syntax and capabilities depend on the database system.</span></div><div class="quick-term"><strong>CTE</strong><span>A Common Table Expression is a named result set defined with WITH and used within the scope of the statement that follows. In SQL Server it is not materialised as a separate table by default.</span></div><div class="quick-term"><strong>Temporal table</strong><span>A table designed to preserve row history over time. In SQL Server, a system-versioned temporal table keeps current data plus historical row versions so you can query an earlier point in time.</span></div><div class="quick-term"><strong>Normalisation</strong><span>A relational database design process that reduces unnecessary duplication and update anomalies by putting facts into appropriate related tables.</span></div><div class="quick-term"><strong>Denormalisation</strong><span>An intentional design choice that combines or repeats data to reduce joins or improve some read-heavy workloads, accepting additional duplication and maintenance risk.</span></div><div class="quick-term"><strong>ROW_NUMBER</strong><span>Assigns a unique sequential number to each row within a partition according to the ORDER BY in the OVER clause.</span></div><div class="quick-term"><strong>RANK</strong><span>Gives tied rows the same rank and leaves gaps afterwards: 1, 2, 2, 4.</span></div><div class="quick-term"><strong>DENSE_RANK</strong><span>Gives tied rows the same rank but does not leave gaps: 1, 2, 2, 3.</span></div><div class="quick-term"><strong>Primary key</strong><span>A column or combination of columns chosen to uniquely identify each row in a table.</span></div><div class="quick-term"><strong>Foreign key</strong><span>A column or combination of columns that references a key in another or the same table and can enforce referential integrity.</span></div><div class="quick-term"><strong>Index</strong><span>A database structure that can speed up retrieval for suitable query patterns. It uses storage and adds maintenance work when rows are inserted, updated or deleted.</span></div></div><div class="definition-box" id="normalisation-guide">
+<h3>Normalisation in interview language: 1NF, 2NF and 3NF</h3>
+<p><strong>1NF:</strong> each field holds a single value and repeating groups are removed.</p>
+<p><strong>2NF:</strong> the table is in 1NF and every non-key attribute depends on the whole key, which matters especially when the key is composite.</p>
+<p><strong>3NF:</strong> the table is in 2NF and non-key attributes do not depend on other non-key attributes; they depend on the key.</p>
+<p>A useful summary is: normalisation aims to store each fact in the right place so changes do not have to be repeated across many rows.</p>
+</div><h3 style="margin-top:1.6rem">Common interview questions</h3><div class="interview-q"><h3>What is the difference between a view and a stored procedure?</h3><p class="answer">A view behaves like a reusable virtual table based on a SELECT query. A stored procedure is executable database logic that may accept parameters and perform multiple operations. A view is queried; a procedure is executed.</p></div><div class="interview-q"><h3>What is the difference between ROW_NUMBER, RANK and DENSE_RANK?</h3><p class="answer">ROW_NUMBER always gives unique sequential numbers. RANK gives tied rows the same rank and leaves gaps afterwards. DENSE_RANK gives tied rows the same rank but does not leave gaps.</p></div><div class="interview-q"><h3>What is a CTE and when would you use one?</h3><p class="answer">A CTE is a named result set available to one statement. It is useful for making complex queries easier to read, breaking logic into steps, and writing recursive queries where supported.</p></div><div class="interview-q"><h3>What is a temporal table?</h3><p class="answer">A temporal table keeps historical row versions so you can query how data looked at an earlier point in time. SQL Server has built-in system-versioned temporal tables; other database systems use different implementations.</p></div><div class="interview-q"><h3>What is normalisation?</h3><p class="answer">Normalisation separates data into related tables to minimise duplication and update anomalies. Common forms include 1NF, 2NF and 3NF.</p></div><div class="interview-q"><h3>Why might you denormalise?</h3><p class="answer">For reporting or high-read workloads, denormalisation can reduce joins and improve query performance, but it increases duplication and the risk of inconsistent data.</p></div><div class="interview-q"><h3>What is the difference between WHERE and HAVING?</h3><p class="answer">WHERE filters rows before grouping. HAVING filters groups after GROUP BY.</p></div><div class="interview-q"><h3>What is the difference between UNION and UNION ALL?</h3><p class="answer">UNION combines results and removes duplicates. UNION ALL keeps all rows and is usually faster because it does not deduplicate.</p></div><div class="interview-q"><h3>What is the difference between DELETE, TRUNCATE and DROP?</h3><p class="answer">DELETE removes selected rows and can usually use WHERE. TRUNCATE removes all rows more directly. DROP removes the table object itself. Exact transactional behaviour varies by database.</p></div><div class="practical-tests"><h3>Practical interview tests</h3><p class="section-lead">These short tasks test whether you can apply the tool, explain your reasoning and validate the result. In a live exercise, say your assumptions aloud and check the output rather than rushing straight to syntax.</p><div class="practice-card"><div class="practice-head"><strong>Return the most recent record for each customer.</strong><span>What it tests: window functions and partitioning</span></div><div class="practice-body"><p><strong>Answer: </strong>Use ROW_NUMBER() partitioned by customer and ordered by date descending, then keep row number 1.</p><p><strong>Why: </strong>Add a deterministic tie-breaker when dates can be identical.</p><pre><code class="language-sql">WITH ranked AS (
+    SELECT
+        customer_id,
+        order_id,
+        order_date,
+        ROW_NUMBER() OVER (
+            PARTITION BY customer_id
+            ORDER BY order_date DESC, order_id DESC
+        ) AS rn
+    FROM orders
+)
+SELECT
+    customer_id,
+    order_id,
+    order_date
+FROM ranked
+WHERE rn = 1;</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>Rank products by sales within each region, with no gaps after ties.</strong><span>What it tests: DENSE_RANK and window partitions</span></div><div class="practice-body"><p><strong>Answer: </strong>Aggregate product sales, then use DENSE_RANK() partitioned by region and ordered by total sales descending.</p><p><strong>Why: </strong>DENSE_RANK gives tied values the same rank without skipping the next rank.</p><pre><code class="language-sql">WITH product_sales AS (
+    SELECT
+        region,
+        product_id,
+        SUM(sales_amount) AS total_sales
+    FROM sales
+    GROUP BY region, product_id
+)
+SELECT
+    region,
+    product_id,
+    total_sales,
+    DENSE_RANK() OVER (
+        PARTITION BY region
+        ORDER BY total_sales DESC
+    ) AS sales_rank
+FROM product_sales;</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>Find customers who have never placed an order.</strong><span>What it tests: anti-join logic</span></div><div class="practice-body"><p><strong>Answer: </strong>Use NOT EXISTS, or a LEFT JOIN followed by a NULL check.</p><p><strong>Why: </strong>NOT EXISTS expresses the business question clearly and avoids accidental row multiplication.</p><pre><code class="language-sql">SELECT
+    c.customer_id,
+    c.customer_name
+FROM customers AS c
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM orders AS o
+    WHERE o.customer_id = c.customer_id
+);</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>Calculate a running total of daily sales.</strong><span>What it tests: window aggregates</span></div><div class="practice-body"><p><strong>Answer: </strong>Aggregate by date first, then apply SUM() as a window function ordered by date.</p><pre><code class="language-sql">WITH daily_sales AS (
+    SELECT
+        order_date,
+        SUM(sales_amount) AS daily_total
+    FROM sales
+    GROUP BY order_date
+)
+SELECT
+    order_date,
+    daily_total,
+    SUM(daily_total) OVER (
+        ORDER BY order_date
+        ROWS UNBOUNDED PRECEDING
+    ) AS running_total
+FROM daily_sales
+ORDER BY order_date;</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>How would you find duplicate business keys?</strong><span>What it tests: data-quality SQL</span></div><div class="practice-body"><p><strong>Answer: </strong>Group by the key and keep groups with COUNT(*) greater than 1.</p><pre><code class="language-sql">SELECT
+    patient_id,
+    COUNT(*) AS occurrences
+FROM patients
+GROUP BY patient_id
+HAVING COUNT(*) &gt; 1;</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>A query became slow after a table grew substantially. What would you investigate?</strong><span>What it tests: performance reasoning</span></div><div class="practice-body"><p><strong>Answer: </strong>Start with the execution plan, filters, join predicates, indexes, row counts, unnecessary columns, data types and whether expressions prevent useful index access.</p><p><strong>Why: </strong>A strong answer does not jump straight to 'add an index'; indexes help some read patterns but also have storage and write costs.</p></div></div></div></div></section><section class="guide-section searchable-section" id="learning-plan">
+<div class="section-number">20</div>
 <div class="section-content">
 <h2>Four-week SQL learning plan</h2>
 <p class="section-intro">Practise with a small database and write queries every day. SQL becomes familiar through repetition.</p>
@@ -1014,11 +1140,7 @@ Practice:
 </main>
 <section class="related-guides"><h2>Continue learning</h2><div class="related-grid"><a class="related-card" href="python-guide.html"><strong>Python for Data Science, Machine Learning and AI</strong><span>Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni.</span></a><a class="related-card" href="r-guide.html"><strong>R for Data Science, Statistics and Reporting</strong><span>Learn R and RStudio for data cleaning, visualisation, statistics, modelling, Quarto and Shiny with practical examples by Imonikhe Ayeni.</span></a></div></section><footer class="footer">
 <div class="footer-inner">
-<div>
-        Written and maintained by <strong>Imonikhe Ayeni</strong>.
-        <br/>Last updated: August 2026.
-        <br/>SQL syntax can vary between database systems, so check the documentation for the database you use.
-      </div>
+<div>Written and maintained by <strong>Imonikhe Ayeni</strong>.<br/>Last updated: September 2026.</div>
 <a class="back-to-top" href="#top">Back to top ↑</a>
 </div>
 </footer>
