@@ -1,22 +1,33 @@
 name: Update sitemap
+
 on:
   push:
     branches: [main]
     paths:
-      - "**.html"
+      - "**/*.html"
       - "tools/generate_sitemap.py"
+      - ".github/workflows/update-sitemap.yml"
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   sitemap:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - run: python tools/generate_sitemap.py
+
+      - name: Generate sitemap
+        run: python tools/generate_sitemap.py
+
       - name: Commit sitemap when changed
         run: |
           if git diff --quiet sitemap.xml; then
