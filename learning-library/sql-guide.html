@@ -84,7 +84,7 @@
 .answer-structure p{margin:.25rem 0;font-size:.88rem;color:var(--muted)}
 .answer-structure strong{color:var(--text)}
 </style>
-<meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." name="description"/><link href="https://imonikheayeni.com/learning-library/sql-guide.html" rel="canonical"/><meta content="article" property="og:type"/><meta content="SQL for Data Analysis and Reporting" property="og:title"/><meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." property="og:description"/><meta content="https://imonikheayeni.com/learning-library/sql-guide.html" property="og:url"/><meta content="Imonikhe Ayeni" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="SQL for Data Analysis and Reporting" name="twitter:title"/><meta content="Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "@id": "https://imonikheayeni.com/learning-library/sql-guide.html#article", "headline": "SQL for Data Analysis and Reporting", "description": "Learn SQL for querying, joins, aggregation, CTEs, window functions, data-quality checks and analytical reporting with practical examples.", "url": "https://imonikheayeni.com/learning-library/sql-guide.html", "datePublished": "2026-08-01", "dateModified": "2026-09-12", "inLanguage": "en-GB", "proficiencyLevel": "Beginner to intermediate", "timeRequired": "PT9M", "keywords": "SQL, Databases, Data Analysis, Reporting, Data Quality", "author": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "publisher": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "isPartOf": {"@type": "CollectionPage", "name": "Learning Library", "url": "https://imonikheayeni.com/learning-library/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://imonikheayeni.com/"}, {"@type": "ListItem", "position": 2, "name": "Learning Library", "item": "https://imonikheayeni.com/learning-library/"}, {"@type": "ListItem", "position": 3, "name": "SQL", "item": "https://imonikheayeni.com/learning-library/sql-guide.html"}]}]}</script><meta content="index, follow, max-image-preview:large" name="robots"/></head>
+<meta content="Learn SQL for querying, joins, NULL handling, date and time analysis, advanced window functions, CTEs, data-quality checks and analytical reporting with practical examples." name="description"/><link href="https://imonikheayeni.com/learning-library/sql-guide.html" rel="canonical"/><meta content="article" property="og:type"/><meta content="SQL for Data Analysis and Reporting" property="og:title"/><meta content="Learn SQL for querying, joins, NULL handling, date and time analysis, advanced window functions, CTEs, data-quality checks and analytical reporting with practical examples." property="og:description"/><meta content="https://imonikheayeni.com/learning-library/sql-guide.html" property="og:url"/><meta content="Imonikhe Ayeni" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="SQL for Data Analysis and Reporting" name="twitter:title"/><meta content="Learn SQL for querying, joins, NULL handling, date and time analysis, advanced window functions, CTEs, data-quality checks and analytical reporting with practical examples." name="twitter:description"/><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "@id": "https://imonikheayeni.com/learning-library/sql-guide.html#article", "headline": "SQL for Data Analysis and Reporting", "description": "Learn SQL for querying, joins, NULL handling, date and time analysis, advanced window functions, CTEs, data-quality checks and analytical reporting with practical examples.", "url": "https://imonikheayeni.com/learning-library/sql-guide.html", "datePublished": "2026-08-01", "dateModified": "2026-10-02", "inLanguage": "en-GB", "proficiencyLevel": "Beginner to intermediate", "timeRequired": "PT15M", "keywords": "SQL, Databases, Data Analysis, Reporting, NULL, Date and Time, Window Functions, Data Quality", "author": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "publisher": {"@type": "Person", "name": "Imonikhe Ayeni", "url": "https://imonikheayeni.com"}, "isPartOf": {"@type": "CollectionPage", "name": "Learning Library", "url": "https://imonikheayeni.com/learning-library/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://imonikheayeni.com/"}, {"@type": "ListItem", "position": 2, "name": "Learning Library", "item": "https://imonikheayeni.com/learning-library/"}, {"@type": "ListItem", "position": 3, "name": "SQL", "item": "https://imonikheayeni.com/learning-library/sql-guide.html"}]}]}</script><meta content="index, follow, max-image-preview:large" name="robots"/></head>
 <body id="top">
 <a class="skip-link" href="#main-content">Skip to the guide</a>
 <header class="site-header">
@@ -108,7 +108,7 @@
 <p class="hero-copy">
 <strong>By Imonikhe Ayeni</strong><br/><br/>
             This guide starts with installing a database tool and writing simple queries, then moves
-            through filtering, summaries, joins, common table expressions, window functions, data-quality
+            through filtering, NULL handling, summaries, joins, common table expressions, advanced window functions, date and time analysis, data-quality
             checks and reporting. Work through the sections in order if you are new to SQL, or use the
             contents panel to find a specific topic.
           </p>
@@ -121,13 +121,13 @@
 <p class="map-note">Learn how data is stored first, then build queries step by step.</p>
 </div>
 <div class="hero-meta">
-<div class="metric"><strong>19</strong><span>learning sections</span></div>
-<div class="metric"><strong>60+</strong><span>examples</span></div>
+<div class="metric"><strong>21</strong><span>learning sections</span></div>
+<div class="metric"><strong>90+</strong><span>examples</span></div>
 <div class="metric"><strong>Part 3</strong><span>learning library</span></div>
 </div>
 </aside>
 </div>
-</section><div aria-label="Course information" class="course-details"><span>Beginner to intermediate</span><span>About 9 minutes</span><span>Last updated September 2026</span><span>Includes interview refresher</span></div>
+</section><div aria-label="Course information" class="course-details"><span>Beginner to intermediate</span><span>About 15 minutes</span><span>Last updated October 2026</span><span>Includes interview refresher</span></div>
 <section class="author-note"><h2>A note from the author</h2><p>I’m Imonikhe Ayeni. I use SQL to extract, check and summarise data for analysis and reporting.</p><p>SQL is easiest to learn by writing small queries. Start with SELECT and WHERE, then add summaries and joins once those feel natural.</p></section>
 <nav aria-label="Learning library navigation" class="library-nav"><a class="library-link" href="python-guide.html">Part 1: Python</a>
 <a class="library-link" href="r-guide.html">Part 2: R</a>
@@ -145,19 +145,21 @@
 <a href="#filtering"><span>04</span>Filtering rows</a>
 <a href="#sorting-limiting"><span>05</span>Sorting and limiting results</a>
 <a href="#calculated-columns"><span>06</span>Calculated columns and CASE</a>
-<a href="#aggregates"><span>07</span>Summary statistics</a>
-<a href="#joins"><span>08</span>Joining tables</a>
-<a href="#subqueries-ctes"><span>09</span>Subqueries and CTEs</a>
-<a href="#window-functions"><span>10</span>Window functions</a>
-<a href="#dates"><span>11</span>Working with dates</a>
-<a href="#text"><span>12</span>Working with text</a>
-<a href="#data-quality"><span>13</span>Data-quality checks</a>
-<a href="#modifying-data"><span>14</span>Updating and deleting data</a>
-<a href="#views-indexes"><span>15</span>Views, stored procedures and indexes</a>
-<a href="#analytics-project"><span>16</span>A complete analysis query</a>
-<a href="#python-r"><span>17</span>Using SQL with Python and R</a>
-<a href="#habits"><span>18</span>Good SQL habits</a>
-<a href="#interview-refresher"><span>19</span>SQL interview refresher</a><a href="#learning-plan"><span>20</span>Four-week SQL learning plan</a></nav>
+<a href="#nulls"><span>07</span>NULL and missing values</a>
+<a href="#aggregates"><span>08</span>Summary statistics</a>
+<a href="#joins"><span>09</span>Joining tables</a>
+<a href="#subqueries-ctes"><span>10</span>Subqueries and CTEs</a>
+<a href="#window-functions"><span>11</span>Window functions</a>
+<a href="#dates"><span>12</span>Date and time functions</a>
+<a href="#text"><span>13</span>Working with text</a>
+<a href="#data-quality"><span>14</span>Data-quality checks</a>
+<a href="#modifying-data"><span>15</span>Updating and deleting data</a>
+<a href="#views-indexes"><span>16</span>Views, stored procedures and indexes</a>
+<a href="#analytics-project"><span>17</span>A complete analysis query</a>
+<a href="#python-r"><span>18</span>Using SQL with Python and R</a>
+<a href="#habits"><span>19</span>Good SQL habits</a>
+<a href="#interview-refresher"><span>20</span>SQL interview refresher</a>
+<a href="#learning-plan"><span>21</span>Four-week SQL learning plan</a></nav>
 </aside>
 <div>
 <div class="no-results" id="no-results">No matching sections were found. Try a broader search term.</div>
@@ -435,8 +437,134 @@ FROM patients;</code></pre>
 </div>
 </div>
 </section>
-<section class="guide-section searchable-section" id="aggregates">
+
+<section class="guide-section searchable-section" id="nulls">
 <div class="section-number">07</div>
+<div class="section-content">
+<h2>NULL and missing values</h2>
+<p class="section-intro">NULL represents an unknown, missing or not-applicable value. It is not zero, an empty string or FALSE. NULL needs its own comparison rules, and it can change the result of arithmetic, aggregation, joins and filters.</p>
+
+<div class="definition-box">
+<h3>Concept first: what NULL changes</h3>
+<p><strong>Comparisons:</strong> use <code>IS NULL</code> or <code>IS NOT NULL</code>. Expressions such as <code>= NULL</code> do not work as normal equality tests.</p>
+<p><strong>Arithmetic:</strong> a calculation involving NULL normally returns NULL, so replace NULL first when a business rule justifies a default.</p>
+<p><strong>Aggregates:</strong> <code>COUNT(column)</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code> and <code>MAX</code> generally ignore NULL inputs, while <code>COUNT(*)</code> counts rows.</p>
+<p><strong>Joins:</strong> an unmatched row from the preserved side of a LEFT JOIN produces NULLs for columns from the other table.</p>
+</div>
+
+<table class="compare-table">
+<thead><tr><th>Need</th><th>Portable / common approach</th><th>Dialect notes</th></tr></thead>
+<tbody>
+<tr><td>Test for missing values</td><td><code>IS NULL</code>, <code>IS NOT NULL</code></td><td>Standard SQL pattern</td></tr>
+<tr><td>Return the first available value</td><td><code>COALESCE(a, b, c)</code></td><td>Portable across major systems</td></tr>
+<tr><td>Return NULL when two expressions are equal</td><td><code>NULLIF(a, b)</code></td><td>Useful for divide-by-zero protection</td></tr>
+<tr><td>Replace NULL with one fallback</td><td><code>COALESCE(value, fallback)</code></td><td>SQL Server also has <code>ISNULL(value, fallback)</code>; MySQL/SQLite have <code>IFNULL</code></td></tr>
+<tr><td>Null-safe equality</td><td>Dialect-specific</td><td>PostgreSQL: <code>IS NOT DISTINCT FROM</code>; MySQL: <code>&lt;=&gt;</code></td></tr>
+</tbody>
+</table>
+
+<div class="examples-grid">
+<article class="example-card">
+<div class="example-heading"><h3>IS NULL and IS NOT NULL</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">-- Correct
+SELECT *
+FROM patients
+WHERE age IS NULL;
+
+SELECT *
+FROM patients
+WHERE age IS NOT NULL;
+
+-- Do not write:
+-- WHERE age = NULL;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>COALESCE: return the first non-NULL value</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    patient_name,
+    COALESCE(phone_mobile, phone_home, 'No phone recorded') AS contact_number
+FROM patients;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>SQL Server ISNULL vs COALESCE</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">-- SQL Server: two arguments
+SELECT ISNULL(gender, 'Not recorded') AS gender
+FROM patients;
+
+-- Standard SQL: two or more arguments
+SELECT COALESCE(gender, ethnicity, 'Not recorded') AS first_available_value
+FROM patients;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>NULLIF: protect a division</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    practice_id,
+    responses,
+    invitations,
+    100.0 * responses / NULLIF(invitations, 0) AS response_rate
+FROM practice_summary;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>COUNT(*) vs COUNT(column)</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    COUNT(*) AS all_rows,
+    COUNT(age) AS rows_with_age,
+    COUNT(*) - COUNT(age) AS missing_age
+FROM patients;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>NULL in arithmetic</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    order_id,
+    subtotal,
+    discount,
+    subtotal - discount AS may_be_null,
+    subtotal - COALESCE(discount, 0) AS final_amount
+FROM orders;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Find rows with no matching record: anti join</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">-- LEFT anti join
+SELECT c.*
+FROM customers AS c
+LEFT JOIN orders AS o
+    ON c.customer_id = o.customer_id
+WHERE o.customer_id IS NULL;
+
+-- Often clearer:
+SELECT c.*
+FROM customers AS c
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM orders AS o
+    WHERE o.customer_id = c.customer_id
+);</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Be careful with NOT IN when NULL is possible</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">-- This can behave unexpectedly if the subquery returns NULL:
+SELECT *
+FROM customers
+WHERE customer_id NOT IN (
+    SELECT customer_id
+    FROM orders
+);
+
+-- Prefer NOT EXISTS when the subquery key may contain NULLs.</code></pre>
+</article>
+</div>
+</div>
+</section>
+
+<section class="guide-section searchable-section" id="aggregates">
+<div class="section-number">08</div>
 <div class="section-content">
 <h2>Summary statistics</h2>
 <p class="section-intro">Aggregate functions reduce many rows to summary values such as counts, totals and averages.</p>
@@ -481,7 +609,7 @@ HAVING COUNT(*) &gt;= 10;</code></pre>
 </div>
 </section>
 <section class="guide-section searchable-section" id="joins">
-<div class="section-number">08</div>
+<div class="section-number">09</div>
 <div class="section-content">
 <h2>Joining tables</h2>
 <p class="section-intro">Joins combine related tables. The join condition should identify how rows in one table correspond to rows in another.</p>
@@ -537,7 +665,7 @@ WHERE h.hospital_id IS NULL;</code></pre>
 </div>
 </section>
 <section class="guide-section searchable-section" id="subqueries-ctes">
-<div class="section-number">09</div>
+<div class="section-number">10</div>
 <div class="section-content">
 <h2>Subqueries and CTEs</h2>
 <p class="section-intro">A subquery is a query nested inside another query. A Common Table Expression (CTE) is a named result set defined with WITH and available only to the statement that follows. Unlike a temporary table, a CTE is not normally stored as a separate table.</p>
@@ -578,37 +706,51 @@ WHERE patients &gt;= 10;</code></pre>
 </div>
 </div>
 </section>
+
 <section class="guide-section searchable-section" id="window-functions">
-<div class="section-number">10</div>
+<div class="section-number">11</div>
 <div class="section-content">
 <h2>Window functions</h2>
-<p class="section-intro">Window functions calculate values across related rows without collapsing the result into one row per group. For ranking questions, remember the difference: ROW_NUMBER always gives a unique sequence, RANK leaves gaps after ties, and DENSE_RANK does not leave gaps.</p>
+<p class="section-intro">Window functions calculate across related rows while preserving row-level detail. Unlike GROUP BY, they do not normally collapse a group into one output row. They are central to ranking, running totals, rolling calculations, comparisons with previous or next rows and percent-of-total analysis.</p>
+
 <div class="definition-box">
-<h3>Concept first: ROW_NUMBER vs RANK vs DENSE_RANK</h3>
-<p><strong>ROW_NUMBER:</strong> 1, 2, 3, 4 even when values are tied.</p>
-<p><strong>RANK:</strong> tied values can produce 1, 2, 2, 4.</p>
-<p><strong>DENSE_RANK:</strong> tied values can produce 1, 2, 2, 3.</p>
-</div><div class="examples-grid">
-<article class="example-card">
-<div class="example-heading">
-<h3>Row numbers</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
+<h3>Anatomy of a window expression</h3>
+<p><strong>Function:</strong> for example <code>SUM</code>, <code>AVG</code>, <code>ROW_NUMBER</code>, <code>RANK</code>, <code>LAG</code> or <code>LEAD</code>.</p>
+<p><strong>OVER:</strong> turns a supported function into a window calculation.</p>
+<p><strong>PARTITION BY:</strong> divides the result into independent groups without collapsing them.</p>
+<p><strong>ORDER BY:</strong> defines row order inside each partition.</p>
+<p><strong>Frame:</strong> optionally limits which rows around the current row are included, such as all previous rows or the previous two rows plus the current row.</p>
 </div>
-<pre><code class="language-sql">SELECT
-    patient_name,
-    hospital_id,
-    age,
-    ROW_NUMBER() OVER (
-        PARTITION BY hospital_id
-        ORDER BY age DESC
-    ) AS age_rank
-FROM patients;</code></pre>
+
+<article class="example-card">
+<div class="example-heading"><h3>General pattern</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">function_name(expression) OVER (
+    PARTITION BY grouping_column
+    ORDER BY sort_column
+    ROWS BETWEEN frame_start AND frame_end
+)</code></pre>
 </article>
-<article class="example-card">
-<div class="example-heading">
-<h3>Group average beside each row</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
+
+<table class="compare-table">
+<thead><tr><th>Family</th><th>Common functions</th><th>Typical analytical use</th></tr></thead>
+<tbody>
+<tr><td>Aggregate windows</td><td><code>SUM</code>, <code>AVG</code>, <code>COUNT</code>, <code>MIN</code>, <code>MAX</code></td><td>Running totals, group averages, percent of total</td></tr>
+<tr><td>Ranking</td><td><code>ROW_NUMBER</code>, <code>RANK</code>, <code>DENSE_RANK</code>, <code>NTILE</code></td><td>Top-N, ordering, quartiles/deciles</td></tr>
+<tr><td>Offset / value</td><td><code>LAG</code>, <code>LEAD</code>, <code>FIRST_VALUE</code>, <code>LAST_VALUE</code></td><td>Previous/next values, first/last within a window</td></tr>
+<tr><td>Distribution</td><td><code>PERCENT_RANK</code>, <code>CUME_DIST</code></td><td>Relative position within an ordered group</td></tr>
+</tbody>
+</table>
+
+<div class="definition-box">
+<h3>ROW_NUMBER vs RANK vs DENSE_RANK</h3>
+<p><strong>ROW_NUMBER:</strong> always gives a unique sequence: 1, 2, 3, 4.</p>
+<p><strong>RANK:</strong> ties share a rank and leave gaps: 1, 2, 2, 4.</p>
+<p><strong>DENSE_RANK:</strong> ties share a rank with no gaps: 1, 2, 2, 3.</p>
 </div>
+
+<div class="examples-grid">
+<article class="example-card">
+<div class="example-heading"><h3>Aggregate window: group average beside every row</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
 <pre><code class="language-sql">SELECT
     patient_name,
     hospital_id,
@@ -618,66 +760,336 @@ FROM patients;</code></pre>
     ) AS hospital_mean_age
 FROM patients;</code></pre>
 </article>
+
 <article class="example-card">
-<div class="example-heading">
-<h3>Running total</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
-</div>
+<div class="example-heading"><h3>ROW_NUMBER: most recent row per customer</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">WITH ranked AS (
+    SELECT
+        customer_id,
+        order_id,
+        order_date,
+        ROW_NUMBER() OVER (
+            PARTITION BY customer_id
+            ORDER BY order_date DESC, order_id DESC
+        ) AS rn
+    FROM orders
+)
+SELECT *
+FROM ranked
+WHERE rn = 1;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>RANK and DENSE_RANK</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    region,
+    product_id,
+    total_sales,
+    RANK() OVER (
+        PARTITION BY region
+        ORDER BY total_sales DESC
+    ) AS sales_rank_with_gaps,
+    DENSE_RANK() OVER (
+        PARTITION BY region
+        ORDER BY total_sales DESC
+    ) AS sales_rank_no_gaps
+FROM product_sales;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>NTILE: split rows into quartiles</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    customer_id,
+    annual_spend,
+    NTILE(4) OVER (
+        ORDER BY annual_spend DESC
+    ) AS spend_quartile
+FROM customer_summary;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Running total with an explicit ROWS frame</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
 <pre><code class="language-sql">SELECT
     activity_date,
     daily_responses,
     SUM(daily_responses) OVER (
         ORDER BY activity_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
     ) AS cumulative_responses
 FROM response_activity;</code></pre>
 </article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Rolling three-row average</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    activity_date,
+    daily_responses,
+    AVG(daily_responses) OVER (
+        ORDER BY activity_date
+        ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+    ) AS rolling_3_row_average
+FROM response_activity;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>LAG and LEAD: compare neighbouring rows</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    month,
+    responses,
+    LAG(responses) OVER (ORDER BY month) AS previous_month,
+    LEAD(responses) OVER (ORDER BY month) AS next_month,
+    responses - LAG(responses) OVER (ORDER BY month) AS change_from_previous
+FROM monthly_responses;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Percent of total</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    region,
+    sales_amount,
+    100.0 * sales_amount
+        / NULLIF(SUM(sales_amount) OVER (), 0) AS percent_of_total
+FROM sales;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Top three products per region</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">WITH ranked_products AS (
+    SELECT
+        region,
+        product_id,
+        total_sales,
+        DENSE_RANK() OVER (
+            PARTITION BY region
+            ORDER BY total_sales DESC
+        ) AS sales_rank
+    FROM product_sales
+)
+SELECT *
+FROM ranked_products
+WHERE sales_rank &lt;= 3;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>FIRST_VALUE and LAST_VALUE with a deliberate frame</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    customer_id,
+    order_date,
+    order_amount,
+    FIRST_VALUE(order_amount) OVER (
+        PARTITION BY customer_id
+        ORDER BY order_date
+    ) AS first_order_amount,
+    LAST_VALUE(order_amount) OVER (
+        PARTITION BY customer_id
+        ORDER BY order_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+    ) AS last_order_amount
+FROM orders;</code></pre>
+</article>
+</div>
+
+<div class="definition-box">
+<h3>Window-function habits that prevent mistakes</h3>
+<p><strong>Use a deterministic tie-breaker:</strong> if two rows can share the same date or score, add another stable column to the window ORDER BY.</p>
+<p><strong>Be explicit about frames:</strong> when an ordered aggregate needs a running or rolling calculation, write the <code>ROWS BETWEEN ...</code> frame rather than relying on a database default.</p>
+<p><strong>Aggregate first when necessary:</strong> if the business question is “running total of daily sales”, create daily totals first, then window over those totals.</p>
+<p><strong>Remember execution order:</strong> a window result usually cannot be referenced directly in WHERE in the same SELECT level; place it in a CTE/subquery and filter outside.</p>
 </div>
 </div>
 </section>
+
+
 <section class="guide-section searchable-section" id="dates">
-<div class="section-number">11</div>
+<div class="section-number">12</div>
 <div class="section-content">
-<h2>Working with dates</h2>
-<p class="section-intro">Date syntax differs slightly across database systems. These examples use PostgreSQL-style functions.</p>
+<h2>Date and time functions</h2>
+<p class="section-intro">Date functions are highly dialect-specific. This section covers the SQL Server functions commonly used for extraction, formatting, calculations and validation, then shows PostgreSQL equivalents so you can recognise the same analytical ideas across systems.</p>
+
+<div class="definition-box">
+<h3>Four date-and-time jobs to recognise</h3>
+<p><strong>Part extraction:</strong> pull out or label a year, month, day, week or other component.</p>
+<p><strong>Format and casting:</strong> convert between date/time values, text and other compatible types.</p>
+<p><strong>Calculations:</strong> add intervals, calculate elapsed time or create reporting periods.</p>
+<p><strong>Validation:</strong> check or safely attempt conversion before relying on date-like text.</p>
+</div>
+
+<table class="compare-table">
+<thead><tr><th>Task</th><th>SQL Server</th><th>PostgreSQL</th></tr></thead>
+<tbody>
+<tr><td>Year / month / day</td><td><code>YEAR</code>, <code>MONTH</code>, <code>DAY</code></td><td><code>EXTRACT</code>, <code>DATE_PART</code></td></tr>
+<tr><td>Generic date part</td><td><code>DATEPART</code></td><td><code>EXTRACT</code>, <code>DATE_PART</code></td></tr>
+<tr><td>Named date part</td><td><code>DATENAME</code></td><td><code>TO_CHAR</code></td></tr>
+<tr><td>Truncate to month / week / year</td><td><code>DATETRUNC</code> (SQL Server 2022+)</td><td><code>DATE_TRUNC</code></td></tr>
+<tr><td>End of month</td><td><code>EOMONTH</code></td><td>date arithmetic / <code>DATE_TRUNC</code></td></tr>
+<tr><td>Add time</td><td><code>DATEADD</code></td><td><code>+ INTERVAL</code></td></tr>
+<tr><td>Difference</td><td><code>DATEDIFF</code>, <code>DATEDIFF_BIG</code></td><td>date/timestamp subtraction, <code>AGE</code></td></tr>
+<tr><td>Format for display</td><td><code>FORMAT</code>, <code>CONVERT</code></td><td><code>TO_CHAR</code></td></tr>
+<tr><td>Cast types</td><td><code>CAST</code>, <code>CONVERT</code>, <code>TRY_CAST</code>, <code>TRY_CONVERT</code></td><td><code>CAST</code>, <code>::</code></td></tr>
+<tr><td>Validate date-like text</td><td><code>ISDATE</code>; often safer: <code>TRY_CAST</code>/<code>TRY_CONVERT</code></td><td>No direct <code>ISDATE</code>; validate ingestion or use controlled parsing</td></tr>
+</tbody>
+</table>
+
 <div class="examples-grid">
 <article class="example-card">
-<div class="example-heading">
-<h3>Extract parts of a date</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
-</div>
+<div class="example-heading"><h3>SQL Server: DAY, MONTH and YEAR</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
 <pre><code class="language-sql">SELECT
     appointment_date,
-    EXTRACT(YEAR FROM appointment_date) AS year,
-    EXTRACT(MONTH FROM appointment_date) AS month
+    DAY(appointment_date) AS day_number,
+    MONTH(appointment_date) AS month_number,
+    YEAR(appointment_date) AS year_number
 FROM appointments;</code></pre>
 </article>
+
 <article class="example-card">
-<div class="example-heading">
-<h3>Calculate a duration</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
-</div>
+<div class="example-heading"><h3>SQL Server: DATEPART and DATENAME</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    appointment_date,
+    DATEPART(quarter, appointment_date) AS quarter_number,
+    DATEPART(weekday, appointment_date) AS weekday_number,
+    DATENAME(month, appointment_date) AS month_name,
+    DATENAME(weekday, appointment_date) AS weekday_name
+FROM appointments;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>SQL Server: DATETRUNC</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">-- SQL Server 2022+
+SELECT
+    appointment_date,
+    DATETRUNC(month, appointment_date) AS month_start,
+    DATETRUNC(year, appointment_date) AS year_start
+FROM appointments;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>SQL Server: EOMONTH</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    appointment_date,
+    EOMONTH(appointment_date) AS month_end,
+    EOMONTH(appointment_date, 1) AS next_month_end
+FROM appointments;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>SQL Server: DATEADD</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    appointment_date,
+    DATEADD(day, 14, appointment_date) AS follow_up_due,
+    DATEADD(month, -1, appointment_date) AS one_month_before
+FROM appointments;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>SQL Server: DATEDIFF</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
 <pre><code class="language-sql">SELECT
     patient_id,
-    appointment_date - referral_date AS waiting_days
+    referral_date,
+    appointment_date,
+    DATEDIFF(day, referral_date, appointment_date) AS waiting_days
 FROM appointments;</code></pre>
 </article>
+
 <article class="example-card">
-<div class="example-heading">
-<h3>Group by month</h3>
-<button aria-label="Copy code" class="copy-button" type="button">Copy</button>
-</div>
+<div class="example-heading"><h3>SQL Server: CAST, CONVERT and FORMAT</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
 <pre><code class="language-sql">SELECT
-    DATE_TRUNC('month', appointment_date) AS month,
+    appointment_datetime,
+    CAST(appointment_datetime AS date) AS appointment_date,
+    CONVERT(date, appointment_datetime) AS converted_date,
+    CONVERT(varchar(10), appointment_datetime, 23) AS iso_date_text,
+    FORMAT(appointment_datetime, 'yyyy-MM') AS reporting_month
+FROM appointments;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>SQL Server: validate or safely convert date-like text</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    raw_date,
+    ISDATE(raw_date) AS is_date,
+    TRY_CONVERT(date, raw_date) AS parsed_date
+FROM staging_import;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Current date and timestamp</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">-- SQL Server
+SELECT
+    GETDATE() AS local_datetime,
+    SYSDATETIME() AS higher_precision_datetime,
+    SYSUTCDATETIME() AS utc_datetime,
+    CURRENT_TIMESTAMP AS standard_style_current_timestamp;
+
+-- PostgreSQL
+SELECT
+    CURRENT_DATE,
+    CURRENT_TIMESTAMP;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>PostgreSQL: EXTRACT and DATE_TRUNC</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    appointment_date,
+    EXTRACT(YEAR FROM appointment_date) AS year_number,
+    EXTRACT(MONTH FROM appointment_date) AS month_number,
+    DATE_TRUNC('month', appointment_date) AS month_start
+FROM appointments;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>PostgreSQL: interval arithmetic and date difference</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    patient_id,
+    appointment_date + INTERVAL '14 days' AS follow_up_due,
+    appointment_date::date - referral_date::date AS waiting_days,
+    AGE(appointment_date, referral_date) AS elapsed_interval
+FROM appointments;</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Group by month without mixing years</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">-- PostgreSQL
+SELECT
+    DATE_TRUNC('month', appointment_date) AS month_start,
     COUNT(*) AS appointments
 FROM appointments
 GROUP BY DATE_TRUNC('month', appointment_date)
-ORDER BY month;</code></pre>
+ORDER BY month_start;
+
+-- Avoid grouping only by EXTRACT(MONTH ...)
+-- when the data spans multiple years.</code></pre>
 </article>
+
+<article class="example-card">
+<div class="example-heading"><h3>Use half-open date ranges for timestamps</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT *
+FROM appointments
+WHERE appointment_datetime &gt;= '2026-10-01'
+  AND appointment_datetime &lt;  '2026-11-01';</code></pre>
+</article>
+
+<article class="example-card">
+<div class="example-heading"><h3>SQL Server: convert between UTC and a named time zone</h3><button aria-label="Copy code" class="copy-button" type="button">Copy</button></div>
+<pre><code class="language-sql">SELECT
+    event_time_utc,
+    event_time_utc AT TIME ZONE 'UTC'
+                   AT TIME ZONE 'GMT Standard Time' AS uk_local_time
+FROM events;</code></pre>
+</article>
+</div>
+
+<div class="definition-box">
+<h3>Date-and-time habits that matter in real analysis</h3>
+<p><strong>Store dates as date/time types:</strong> do not store them as display-formatted text unless you are in a staging layer.</p>
+<p><strong>Separate storage from presentation:</strong> use date values for filtering and calculations; format as text only near the reporting/output layer.</p>
+<p><strong>Use unambiguous literals:</strong> ISO-style <code>YYYY-MM-DD</code> is easier to read and reduces locale ambiguity.</p>
+<p><strong>Prefer range filters:</strong> filtering a timestamp with <code>&gt;= start AND &lt; next_period</code> handles times during the day and often gives the optimiser a better chance to use an index than wrapping the column in a function.</p>
+<p><strong>Do not use DATEDIFF(year, birth_date, today) as an exact age:</strong> it counts year boundaries and needs a birthday adjustment.</p>
 </div>
 </div>
 </section>
+
 <section class="guide-section searchable-section" id="text">
-<div class="section-number">12</div>
+<div class="section-number">13</div>
 <div class="section-content">
 <h2>Working with text</h2>
 <p class="section-intro">Text functions help clean, combine and inspect character values.</p>
@@ -716,7 +1128,7 @@ FROM patients;</code></pre>
 </div>
 </section>
 <section class="guide-section searchable-section" id="data-quality">
-<div class="section-number">13</div>
+<div class="section-number">14</div>
 <div class="section-content">
 <h2>Data-quality checks</h2>
 <p class="section-intro">SQL is useful for checking completeness, duplicates, invalid values and broken relationships before analysis.</p>
@@ -770,7 +1182,7 @@ LEFT JOIN hospitals AS h
 </div>
 </section>
 <section class="guide-section searchable-section" id="modifying-data">
-<div class="section-number">14</div>
+<div class="section-number">15</div>
 <div class="section-content">
 <h2>Updating and deleting data</h2>
 <p class="section-intro">INSERT, UPDATE and DELETE change stored data. Always test the WHERE condition with SELECT before running an update or deletion.</p>
@@ -822,7 +1234,7 @@ COMMIT;
 </div>
 </section>
 <section class="guide-section searchable-section" id="views-indexes">
-<div class="section-number">15</div>
+<div class="section-number">16</div>
 <div class="section-content">
 <h2>Views, stored procedures and indexes</h2>
 <p class="section-intro">Views, stored procedures and indexes solve different database problems. A view is a saved query that behaves like a virtual table. A stored procedure is executable database logic that can accept parameters and run one or more statements. An index is a separate structure that can speed up searches, joins and sorting, with storage and write-performance trade-offs. The procedure examples below use SQL Server T-SQL; syntax and features differ across database systems.</p>
@@ -877,7 +1289,7 @@ ON dbo.patients (hospital_id);</code></pre></article><div class="definition-box"
 </div>
 </section>
 <section class="guide-section searchable-section" id="analytics-project">
-<div class="section-number">16</div>
+<div class="section-number">17</div>
 <div class="section-content">
 <h2>A complete analysis query</h2>
 <p class="section-intro">This example combines filtering, joining, grouping and calculated fields in one reporting query.</p>
@@ -926,7 +1338,7 @@ ORDER BY r.mean_score DESC;</code></pre>
 </div>
 </section>
 <section class="guide-section searchable-section" id="python-r">
-<div class="section-number">17</div>
+<div class="section-number">18</div>
 <div class="section-content">
 <h2>Using SQL with Python and R</h2>
 <p class="section-intro">SQL often handles extraction and aggregation, while Python or R performs further analysis, visualisation or modelling.</p>
@@ -986,7 +1398,7 @@ dbDisconnect(connection)</code></pre>
 </div>
 </section>
 <section class="guide-section searchable-section" id="habits">
-<div class="section-number">18</div>
+<div class="section-number">19</div>
 <div class="section-content">
 <h2>Good SQL habits</h2>
 <p class="section-intro">Readable SQL is easier to review, debug and maintain.</p>
@@ -1019,13 +1431,13 @@ FROM patients;</code></pre>
 </div>
 </div>
 </section>
-<section class="guide-section searchable-section interview-section" id="interview-refresher"><div class="section-number">19</div><div class="section-content"><h2>SQL key terms and interview refresher</h2><p class="section-intro">Use this section as a quick revision page before an interview or when a term comes up at work. The aim is to understand the idea well enough to explain it in plain language before memorising syntax.</p><div class="quick-terms"><div class="quick-term"><strong>View</strong><span>A named SELECT query that can be queried like a virtual table. A normal view stores the query definition rather than a separate copy of the rows; some systems also support materialised or indexed views.</span></div><div class="quick-term"><strong>Stored procedure</strong><span>A named executable routine stored in the database. It can accept parameters and contain multiple SQL statements and control-flow logic. Exact syntax and capabilities depend on the database system.</span></div><div class="quick-term"><strong>CTE</strong><span>A Common Table Expression is a named result set defined with WITH and used within the scope of the statement that follows. In SQL Server it is not materialised as a separate table by default.</span></div><div class="quick-term"><strong>Temporal table</strong><span>A table designed to preserve row history over time. In SQL Server, a system-versioned temporal table keeps current data plus historical row versions so you can query an earlier point in time.</span></div><div class="quick-term"><strong>Normalisation</strong><span>A relational database design process that reduces unnecessary duplication and update anomalies by putting facts into appropriate related tables.</span></div><div class="quick-term"><strong>Denormalisation</strong><span>An intentional design choice that combines or repeats data to reduce joins or improve some read-heavy workloads, accepting additional duplication and maintenance risk.</span></div><div class="quick-term"><strong>ROW_NUMBER</strong><span>Assigns a unique sequential number to each row within a partition according to the ORDER BY in the OVER clause.</span></div><div class="quick-term"><strong>RANK</strong><span>Gives tied rows the same rank and leaves gaps afterwards: 1, 2, 2, 4.</span></div><div class="quick-term"><strong>DENSE_RANK</strong><span>Gives tied rows the same rank but does not leave gaps: 1, 2, 2, 3.</span></div><div class="quick-term"><strong>Primary key</strong><span>A column or combination of columns chosen to uniquely identify each row in a table.</span></div><div class="quick-term"><strong>Foreign key</strong><span>A column or combination of columns that references a key in another or the same table and can enforce referential integrity.</span></div><div class="quick-term"><strong>Index</strong><span>A database structure that can speed up retrieval for suitable query patterns. It uses storage and adds maintenance work when rows are inserted, updated or deleted.</span></div></div><div class="definition-box" id="normalisation-guide">
+<section class="guide-section searchable-section interview-section" id="interview-refresher"><div class="section-number">20</div><div class="section-content"><h2>SQL key terms and interview refresher</h2><p class="section-intro">Use this section as a quick revision page before an interview or when a term comes up at work. The aim is to understand the idea well enough to explain it in plain language before memorising syntax.</p><div class="quick-terms"><div class="quick-term"><strong>NULL</strong><span>An unknown, missing or not-applicable value. Test it with IS NULL / IS NOT NULL rather than = NULL.</span></div><div class="quick-term"><strong>COALESCE</strong><span>Returns the first non-NULL expression in its argument list. Useful for fallbacks and for controlling how NULL affects arithmetic or display fields.</span></div><div class="quick-term"><strong>NULLIF</strong><span>Returns NULL when two expressions are equal; otherwise returns the first expression. A common use is preventing division by zero.</span></div><div class="quick-term"><strong>Window frame</strong><span>The subset of rows around the current row used by an ordered window calculation, for example all rows from the start of the partition through the current row.</span></div><div class="quick-term"><strong>LAG / LEAD</strong><span>Return a value from a previous or following row within a defined window order, useful for period-on-period comparisons.</span></div><div class="quick-term"><strong>DATETRUNC / DATE_TRUNC</strong><span>Reduce a date or timestamp to the start of a reporting period such as month or year. SQL Server uses DATETRUNC; PostgreSQL uses DATE_TRUNC.</span></div><div class="quick-term"><strong>View</strong><span>A named SELECT query that can be queried like a virtual table. A normal view stores the query definition rather than a separate copy of the rows; some systems also support materialised or indexed views.</span></div><div class="quick-term"><strong>Stored procedure</strong><span>A named executable routine stored in the database. It can accept parameters and contain multiple SQL statements and control-flow logic. Exact syntax and capabilities depend on the database system.</span></div><div class="quick-term"><strong>CTE</strong><span>A Common Table Expression is a named result set defined with WITH and used within the scope of the statement that follows. In SQL Server it is not materialised as a separate table by default.</span></div><div class="quick-term"><strong>Temporal table</strong><span>A table designed to preserve row history over time. In SQL Server, a system-versioned temporal table keeps current data plus historical row versions so you can query an earlier point in time.</span></div><div class="quick-term"><strong>Normalisation</strong><span>A relational database design process that reduces unnecessary duplication and update anomalies by putting facts into appropriate related tables.</span></div><div class="quick-term"><strong>Denormalisation</strong><span>An intentional design choice that combines or repeats data to reduce joins or improve some read-heavy workloads, accepting additional duplication and maintenance risk.</span></div><div class="quick-term"><strong>ROW_NUMBER</strong><span>Assigns a unique sequential number to each row within a partition according to the ORDER BY in the OVER clause.</span></div><div class="quick-term"><strong>RANK</strong><span>Gives tied rows the same rank and leaves gaps afterwards: 1, 2, 2, 4.</span></div><div class="quick-term"><strong>DENSE_RANK</strong><span>Gives tied rows the same rank but does not leave gaps: 1, 2, 2, 3.</span></div><div class="quick-term"><strong>Primary key</strong><span>A column or combination of columns chosen to uniquely identify each row in a table.</span></div><div class="quick-term"><strong>Foreign key</strong><span>A column or combination of columns that references a key in another or the same table and can enforce referential integrity.</span></div><div class="quick-term"><strong>Index</strong><span>A database structure that can speed up retrieval for suitable query patterns. It uses storage and adds maintenance work when rows are inserted, updated or deleted.</span></div></div><div class="definition-box" id="normalisation-guide">
 <h3>Normalisation in interview language: 1NF, 2NF and 3NF</h3>
 <p><strong>1NF:</strong> each field holds a single value and repeating groups are removed.</p>
 <p><strong>2NF:</strong> the table is in 1NF and every non-key attribute depends on the whole key, which matters especially when the key is composite.</p>
 <p><strong>3NF:</strong> the table is in 2NF and non-key attributes do not depend on other non-key attributes; they depend on the key.</p>
 <p>A useful summary is: normalisation aims to store each fact in the right place so changes do not have to be repeated across many rows.</p>
-</div><h3 style="margin-top:1.6rem">Common interview questions</h3><div class="interview-q"><h3>What is the difference between a view and a stored procedure?</h3><p class="answer">A view behaves like a reusable virtual table based on a SELECT query. A stored procedure is executable database logic that may accept parameters and perform multiple operations. A view is queried; a procedure is executed.</p></div><div class="interview-q"><h3>What is the difference between ROW_NUMBER, RANK and DENSE_RANK?</h3><p class="answer">ROW_NUMBER always gives unique sequential numbers. RANK gives tied rows the same rank and leaves gaps afterwards. DENSE_RANK gives tied rows the same rank but does not leave gaps.</p></div><div class="interview-q"><h3>What is a CTE and when would you use one?</h3><p class="answer">A CTE is a named result set available to one statement. It is useful for making complex queries easier to read, breaking logic into steps, and writing recursive queries where supported.</p></div><div class="interview-q"><h3>What is a temporal table?</h3><p class="answer">A temporal table keeps historical row versions so you can query how data looked at an earlier point in time. SQL Server has built-in system-versioned temporal tables; other database systems use different implementations.</p></div><div class="interview-q"><h3>What is normalisation?</h3><p class="answer">Normalisation separates data into related tables to minimise duplication and update anomalies. Common forms include 1NF, 2NF and 3NF.</p></div><div class="interview-q"><h3>Why might you denormalise?</h3><p class="answer">For reporting or high-read workloads, denormalisation can reduce joins and improve query performance, but it increases duplication and the risk of inconsistent data.</p></div><div class="interview-q"><h3>What is the difference between WHERE and HAVING?</h3><p class="answer">WHERE filters rows before grouping. HAVING filters groups after GROUP BY.</p></div><div class="interview-q"><h3>What is the difference between UNION and UNION ALL?</h3><p class="answer">UNION combines results and removes duplicates. UNION ALL keeps all rows and is usually faster because it does not deduplicate.</p></div><div class="interview-q"><h3>What is the difference between DELETE, TRUNCATE and DROP?</h3><p class="answer">DELETE removes selected rows and can usually use WHERE. TRUNCATE removes all rows more directly. DROP removes the table object itself. Exact transactional behaviour varies by database.</p></div><div class="practical-tests"><h3>Practical interview tests</h3><p class="section-lead">These short tasks test whether you can apply the tool, explain your reasoning and validate the result. In a live exercise, say your assumptions aloud and check the output rather than rushing straight to syntax.</p><div class="practice-card"><div class="practice-head"><strong>Return the most recent record for each customer.</strong><span>What it tests: window functions and partitioning</span></div><div class="practice-body"><p><strong>Answer: </strong>Use ROW_NUMBER() partitioned by customer and ordered by date descending, then keep row number 1.</p><p><strong>Why: </strong>Add a deterministic tie-breaker when dates can be identical.</p><pre><code class="language-sql">WITH ranked AS (
+</div><h3 style="margin-top:1.6rem">Common interview questions</h3><div class="interview-q"><h3>What is NULL, and why does = NULL not work?</h3><p class="answer">NULL means the value is unknown or missing. SQL uses three-valued logic, so ordinary equality does not treat NULL like a normal value. Use IS NULL or IS NOT NULL.</p></div><div class="interview-q"><h3>COALESCE vs ISNULL: what is the difference?</h3><p class="answer">COALESCE is standard SQL and can evaluate several arguments, returning the first non-NULL one. SQL Server ISNULL accepts two arguments and is SQL Server-specific. Their type-resolution behaviour can also differ, so they should not be treated as exact synonyms.</p></div><div class="interview-q"><h3>How are window functions different from GROUP BY?</h3><p class="answer">GROUP BY normally reduces a group to one row. A window function calculates across related rows while preserving each row, which makes it useful for ranking, running totals and comparisons.</p></div><div class="interview-q"><h3>What do LAG and LEAD do?</h3><p class="answer">LAG returns a value from a previous row and LEAD returns a value from a following row according to the ORDER BY inside the window. They are useful for month-on-month or row-to-row comparisons.</p></div><div class="interview-q"><h3>What is the difference between extracting a month and truncating to a month?</h3><p class="answer">Extracting the month usually returns a month number such as 1 to 12. Truncating to month returns the date or timestamp representing the start of that month, preserving the year and therefore working better as a reporting-period key across several years.</p></div><div class="interview-q"><h3>What is the difference between a view and a stored procedure?</h3><p class="answer">A view behaves like a reusable virtual table based on a SELECT query. A stored procedure is executable database logic that may accept parameters and perform multiple operations. A view is queried; a procedure is executed.</p></div><div class="interview-q"><h3>What is the difference between ROW_NUMBER, RANK and DENSE_RANK?</h3><p class="answer">ROW_NUMBER always gives unique sequential numbers. RANK gives tied rows the same rank and leaves gaps afterwards. DENSE_RANK gives tied rows the same rank but does not leave gaps.</p></div><div class="interview-q"><h3>What is a CTE and when would you use one?</h3><p class="answer">A CTE is a named result set available to one statement. It is useful for making complex queries easier to read, breaking logic into steps, and writing recursive queries where supported.</p></div><div class="interview-q"><h3>What is a temporal table?</h3><p class="answer">A temporal table keeps historical row versions so you can query how data looked at an earlier point in time. SQL Server has built-in system-versioned temporal tables; other database systems use different implementations.</p></div><div class="interview-q"><h3>What is normalisation?</h3><p class="answer">Normalisation separates data into related tables to minimise duplication and update anomalies. Common forms include 1NF, 2NF and 3NF.</p></div><div class="interview-q"><h3>Why might you denormalise?</h3><p class="answer">For reporting or high-read workloads, denormalisation can reduce joins and improve query performance, but it increases duplication and the risk of inconsistent data.</p></div><div class="interview-q"><h3>What is the difference between WHERE and HAVING?</h3><p class="answer">WHERE filters rows before grouping. HAVING filters groups after GROUP BY.</p></div><div class="interview-q"><h3>What is the difference between UNION and UNION ALL?</h3><p class="answer">UNION combines results and removes duplicates. UNION ALL keeps all rows and is usually faster because it does not deduplicate.</p></div><div class="interview-q"><h3>What is the difference between DELETE, TRUNCATE and DROP?</h3><p class="answer">DELETE removes selected rows and can usually use WHERE. TRUNCATE removes all rows more directly. DROP removes the table object itself. Exact transactional behaviour varies by database.</p></div><div class="practical-tests"><h3>Practical interview tests</h3><p class="section-lead">These short tasks test whether you can apply the tool, explain your reasoning and validate the result. In a live exercise, say your assumptions aloud and check the output rather than rushing straight to syntax.</p><div class="practice-card"><div class="practice-head"><strong>Return the most recent record for each customer.</strong><span>What it tests: window functions and partitioning</span></div><div class="practice-body"><p><strong>Answer: </strong>Use ROW_NUMBER() partitioned by customer and ordered by date descending, then keep row number 1.</p><p><strong>Why: </strong>Add a deterministic tie-breaker when dates can be identical.</p><pre><code class="language-sql">WITH ranked AS (
     SELECT
         customer_id,
         order_id,
@@ -1086,7 +1498,7 @@ ORDER BY order_date;</code></pre></div></div><div class="practice-card"><div cla
 FROM patients
 GROUP BY patient_id
 HAVING COUNT(*) &gt; 1;</code></pre></div></div><div class="practice-card"><div class="practice-head"><strong>A query became slow after a table grew substantially. What would you investigate?</strong><span>What it tests: performance reasoning</span></div><div class="practice-body"><p><strong>Answer: </strong>Start with the execution plan, filters, join predicates, indexes, row counts, unnecessary columns, data types and whether expressions prevent useful index access.</p><p><strong>Why: </strong>A strong answer does not jump straight to 'add an index'; indexes help some read patterns but also have storage and write costs.</p></div></div></div></div></section><section class="guide-section searchable-section" id="learning-plan">
-<div class="section-number">20</div>
+<div class="section-number">21</div>
 <div class="section-content">
 <h2>Four-week SQL learning plan</h2>
 <p class="section-intro">Practise with a small database and write queries every day. SQL becomes familiar through repetition.</p>
@@ -1107,7 +1519,7 @@ Practice:
 <h3>Week 2</h3>
 <button aria-label="Copy code" class="copy-button" type="button">Copy</button>
 </div>
-<pre><code class="language-none">Aggregate functions, GROUP BY, HAVING, CASE, text functions and dates.
+<pre><code class="language-none">NULL handling, aggregate functions, GROUP BY, HAVING, CASE, text functions and date/time analysis.
 
 Practice:
 • Produce a weekly or monthly summary report.</code></pre>
@@ -1127,7 +1539,7 @@ Practice:
 <h3>Week 4</h3>
 <button aria-label="Copy code" class="copy-button" type="button">Copy</button>
 </div>
-<pre><code class="language-none">Window functions, views, indexes, transactions and connecting SQL to Python or R.
+<pre><code class="language-none">Window functions including ranking, frames, LAG/LEAD and running totals; then views, indexes, transactions and connecting SQL to Python or R.
 
 Practice:
 • Build one complete reporting project from raw tables to final output.</code></pre>
@@ -1140,7 +1552,7 @@ Practice:
 </main>
 <section class="related-guides"><h2>Continue learning</h2><div class="related-grid"><a class="related-card" href="python-guide.html"><strong>Python for Data Science, Machine Learning and AI</strong><span>Learn Python from installation and core syntax through pandas, machine learning, deep learning and AI, with practical examples by Imonikhe Ayeni.</span></a><a class="related-card" href="r-guide.html"><strong>R for Data Science, Statistics and Reporting</strong><span>Learn R and RStudio for data cleaning, visualisation, statistics, modelling, Quarto and Shiny with practical examples by Imonikhe Ayeni.</span></a></div></section><footer class="footer">
 <div class="footer-inner">
-<div>Written and maintained by <strong>Imonikhe Ayeni</strong>.<br/>Last updated: September 2026.</div>
+<div>Written and maintained by <strong>Imonikhe Ayeni</strong>.<br/>Last updated: October 2026.</div>
 <a class="back-to-top" href="#top">Back to top ↑</a>
 </div>
 </footer>
